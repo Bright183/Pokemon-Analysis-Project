@@ -67,7 +67,6 @@ FROM duplicate_cte
 WHERE row_num > 1;
 
 
-
 -- Reorder the columns so the important info I want to see first are in the front
 ALTER TABLE pokemon_staging
 CHANGE pokedex_number pokedex_number VARCHAR(100) NOT NULL FIRST;
@@ -133,6 +132,8 @@ SET name = 'Lycanroc-Midnight'
 WHERE pokedex_number = 745;
 
 
+
+
 -- Deal with NULL or Blank Values ----------------------------------------------------------------------------------------------------------------------------------
 -- Second Typing for pokemon will be left as null because they are intentionally not supposed to have a value
 
@@ -147,49 +148,48 @@ FROM pokemon_staging
 WHERE height_m IS NULL;
 
 
--- Creates a temp table so I can update the heights of pokemon with null values (Because these pokemon have different forms) - Height updated will be the regular form
-CREATE TEMPORARY TABLE height_null_data(
+-- Creates a temp table so I can update the heights/weight of pokemon with null values (Because these pokemon have different forms) - Height/Weight updated will be the form provided by the data
+CREATE TEMPORARY TABLE null_data_temp_table(
 	name varchar(100) PRIMARY KEY,
-    height_m decimal(4,1)
+    height_m decimal(4,1),
+    weight_kg decimal(5,1)
 );
 
 SELECT *
-FROM height_null_data;
+FROM null_data_temp_table;
 
 -- Give the right heights to all the pokemon
-INSERT INTO height_null_data VALUES
-('Exeggutor', 2.0),
-('Rattata', 0.3),
-('Raticate', 0.7),
-('Raichu', 0.8),
-('Sandshrew', 0.6),
-('SandSlash', 1.0),
-('Vulpix', 0.6),
-('Ninetales', 1.1),
-('Diglett', 0.2),
-('Dugtrio', 0.7),
-('Meowth', 0.4),
-('Persian', 1.0),
-('Geodude', 0.4),
-('Graveler', 1.0),
-('Golem', 1.4),
-('Grimer', 0.9),
-('Muk', 1.2),
-('Marowak', 1.0),
-('Hoopa-Unbound', 6.5),
-('Lycanroc-Midnight', 1.1);
+INSERT INTO null_data_temp_table VALUES
+('Exeggutor', 2.0, 120),
+('Rattata', 0.3, 3.5),
+('Raticate', 0.7, 18.5),
+('Raichu', 0.8, 30.0),
+('Sandshrew', 0.6, 12.0),
+('SandSlash', 1.0, 29.5),
+('Vulpix', 0.6, 9.9),
+('Ninetales', 1.1, 20.0),
+('Diglett', 0.2, 0.8),
+('Dugtrio', 0.7, 33.3),
+('Meowth', 0.4, 4.2),
+('Persian', 1.0, 32.0),
+('Geodude', 0.4, 20.0),
+('Graveler', 1.0, 105.0),
+('Golem', 1.4, 300.0),
+('Grimer', 0.9, 30.0),
+('Muk', 1.2, 30.0),
+('Marowak', 1.0, 45.0),
+('Hoopa-Unbound', 6.5, 490.0),
+('Lycanroc-Midnight', 1.1, 25.0);
 
 
 -- Join the tables so the heigths can be in the main table
 UPDATE pokemon_staging t1
-JOIN height_null_data t2 ON t1.name = t2.name
-SET t1.height_m = t2.height_m
-WHERE t1.height_m IS NULL;
+JOIN null_data_temp_table t2 ON t1.name = t2.name
+SET t1.height_m = t2.height_m, t1.weight_kg = t2.weight_kg
+WHERE t1.height_m AND t1.weight_kg IS NULL;
 
 -- Deletes Temp table
 DROP TEMPORARY TABLE height_null_data;
-
-
 
 
 
