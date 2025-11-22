@@ -1,5 +1,6 @@
 use pokemon_data;
 
+-- This data set does not include different forms of pokemon and also excludes ultra beasts
 
 -- 1. Remove Duplicates
 -- 2. Standardize the Data
@@ -28,14 +29,10 @@ FROM pokemon;
 
 
 
-
-
-
-
-
 -- Look at copied table
 SELECT *
-FROM pokemon_staging;
+FROM pokemon_staging
+ORDER BY pokedex_number ASC;
 
 
 
@@ -43,6 +40,9 @@ FROM pokemon_staging;
 
 
 
+-- Make the pokedex_number column a int so it sorts properly
+ALTER TABLE pokemon_staging
+MODIFY COLUMN pokedex_number INT;
 
 -- Clean the abilities column so it doesnt have wierd symbols
 ALTER TABLE pokemon_staging 
@@ -93,7 +93,6 @@ FROM pokemon_staging
 WHERE type2 != TRIM(type2);
 
 
-
 -- Make sure the pokemon data has no weird symbols (So it can be typable for english and prevents errors with older tools)
 -- Looking at Name and Classification Columns
 SELECT pokedex_number, name, classification
@@ -107,7 +106,7 @@ SELECT pokedex_number, name, classification
 FROM pokemon_staging
 WHERE name <> CONVERT(name USING ASCII);
 
--- Fixes the name for Flabebe
+-- Changes the name for Flabebe without accent
 UPDATE pokemon_staging
 SET name = 'Flabebe'
 WHERE pokedex_number = 669;
@@ -118,18 +117,102 @@ SELECT pokedex_number, name, classification
 FROM pokemon_staging
 WHERE classification <> CONVERT(classification USING ASCII);
 
--- Fixes where Pokemon is spelt weird
+-- Changes where Pokemon is spelt with accent
 UPDATE pokemon_staging
 SET classification = REPLACE(classification, 'Pokémon', 'Pokemon')
 WHERE classification LIKE '%Pokémon%';
 
--- Delete NULL rows
+-- Change the name of Hoopa to match with its form (Unbound - Based on the stats given)
+UPDATE pokemon_staging
+SET name = 'Hoopa-Unbound'
+WHERE pokedex_number = 720;
+
+-- Change the name of Lycanroc to match with its form (Midnight form - Based on the stats given)
+UPDATE pokemon_staging
+SET name = 'Lycanroc-Midnight'
+WHERE pokedex_number = 745;
+
+
+-- Deal with NULL or Blank Values ----------------------------------------------------------------------------------------------------------------------------------
+-- Second Typing for pokemon will be left as null because they are intentionally not supposed to have a value
+
+-- Delete NULL rows (There were none)
 DELETE FROM pokemon_staging
 WHERE pokedex_number IS NULL OR name IS NULL;
 
-SELECT * 
+
+-- Fixing the pokemon without height listed in the data
+SELECT name, height_m
 FROM pokemon_staging
-WHERE pokedex_number IS NULL;
+WHERE height_m IS NULL;
+
+
+-- Creates a temp table so I can update the heights of pokemon with null values (Because these pokemon have different forms) - Height updated will be the regular form
+CREATE TEMPORARY TABLE height_null_data(
+	name varchar(100) PRIMARY KEY,
+    height_m decimal(4,1)
+);
+
+SELECT *
+FROM height_null_data;
+
+-- Give the right heights to all the pokemon
+INSERT INTO height_null_data VALUES
+('Exeggutor', 2.0),
+('Rattata', 0.3),
+('Raticate', 0.7),
+('Raichu', 0.8),
+('Sandshrew', 0.6),
+('SandSlash', 1.0),
+('Vulpix', 0.6),
+('Ninetales', 1.1),
+('Diglett', 0.2),
+('Dugtrio', 0.7),
+('Meowth', 0.4),
+('Persian', 1.0),
+('Geodude', 0.4),
+('Graveler', 1.0),
+('Golem', 1.4),
+('Grimer', 0.9),
+('Muk', 1.2),
+('Marowak', 1.0),
+('Hoopa-Unbound', 6.5),
+('Lycanroc-Midnight', 1.1);
+
+
+-- Join the tables so the heigths can be in the main table
+UPDATE pokemon_staging t1
+JOIN height_null_data t2 ON t1.name = t2.name
+SET t1.height_m = t2.height_m
+WHERE t1.height_m IS NULL;
+
+-- Deletes Temp table
+DROP TEMPORARY TABLE height_null_data;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
