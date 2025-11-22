@@ -33,7 +33,6 @@ FROM pokemon;
 
 
 
-
 -- Look at copied table
 SELECT *
 FROM pokemon_staging;
@@ -95,12 +94,49 @@ WHERE type2 != TRIM(type2);
 
 
 
--- Make sure the pokemon data has no weird symbols
+-- Make sure the pokemon data has no weird symbols (So it can be typable for english and prevents errors with older tools)
 -- Looking at Name and Classification Columns
-SELECT *
+SELECT pokedex_number, name, classification
 FROM pokemon_staging
 WHERE name <> CONVERT(name USING ASCII)
 OR classification <> CONVERT(classification USING ASCII);
+
+
+-- Targes the names
+SELECT pokedex_number, name, classification
+FROM pokemon_staging
+WHERE name <> CONVERT(name USING ASCII);
+
+-- Fixes the name for Flabebe
+UPDATE pokemon_staging
+SET name = 'Flabebe'
+WHERE pokedex_number = 669;
+
+
+-- Targets the Classification
+SELECT pokedex_number, name, classification
+FROM pokemon_staging
+WHERE classification <> CONVERT(classification USING ASCII);
+
+-- Fixes where Pokemon is spelt weird
+UPDATE pokemon_staging
+SET classification = REPLACE(classification, 'Pokémon', 'Pokemon')
+WHERE classification LIKE '%Pokémon%';
+
+-- Delete NULL rows
+DELETE FROM pokemon_staging
+WHERE pokedex_number IS NULL OR name IS NULL;
+
+SELECT * 
+FROM pokemon_staging
+WHERE pokedex_number IS NULL;
+
+
+
+
+
+
+
 
 
 
