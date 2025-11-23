@@ -136,6 +136,7 @@ WHERE pokedex_number = 745;
 
 -- Deal with NULL or Blank Values ----------------------------------------------------------------------------------------------------------------------------------
 -- Second Typing for pokemon will be left as null because they are intentionally not supposed to have a value
+-- percentage_male will have nulls which represents that it is neither male nor female instead of 0 as 100% female
 
 -- Delete NULL rows (There were none)
 DELETE FROM pokemon_staging
@@ -148,7 +149,8 @@ FROM pokemon_staging
 WHERE height_m IS NULL;
 
 
--- Creates a temp table so I can update the heights/weight of pokemon with null values (Because these pokemon have different forms) - Height/Weight updated will be the form provided by the data
+-- Creates a temp table so I can update the heights/weight of pokemon with null values (Because these pokemon have different forms) 
+-- Height/Weight updated will be the form provided by the data
 CREATE TEMPORARY TABLE null_data_temp_table(
 	name varchar(100) PRIMARY KEY,
     height_m decimal(4,1),
@@ -189,33 +191,81 @@ SET t1.height_m = t2.height_m, t1.weight_kg = t2.weight_kg
 WHERE t1.height_m AND t1.weight_kg IS NULL;
 
 -- Deletes Temp table
-DROP TEMPORARY TABLE height_null_data;
+DROP TEMPORARY TABLE null_data_temp_table;
+
+
+
+-- Remove useless rows ----------------------------------------------------------------------------------------------------------------------------------------------
+-- Create a new table so it represents the cleaned data and makes pokemon_staging a backup if I want some of the coulmns still
+CREATE TABLE pokemon_cleaned
+LIKE pokemon_staging;
+
+INSERT pokemon_cleaned
+SELECT *
+FROM pokemon_staging;
+
+
+
+-- Shows the table
+SELECT *
+FROM pokemon_cleaned;
 
 
 
 
+-- Dropping these column since they will not be used for any analysis
+ALTER TABLE pokemon_cleaned
+DROP COLUMN experience_growth,
+DROP COLUMN classification,
+DROP COLUMN base_egg_steps,
+DROP COLUMN base_happiness;
 
 
+-- Reorder the columns for better readability with the most relavent data
+ALTER TABLE pokemon_cleaned
+CHANGE type1 type1 VARCHAR(8) AFTER name;
 
+ALTER TABLE pokemon_cleaned
+CHANGE type2 type2 VARCHAR(8) AFTER type1;
 
+ALTER TABLE pokemon_cleaned
+CHANGE generation generation INT AFTER type2;
 
+ALTER TABLE pokemon_cleaned
+CHANGE percentage_male percentage_male decimal(4,1) AFTER generation;
 
+ALTER TABLE pokemon_cleaned
+CHANGE capture_rate capture_rate INT AFTER percentage_male;
 
+ALTER TABLE pokemon_cleaned
+CHANGE is_legendary is_legendary INT AFTER capture_rate;
 
+ALTER TABLE pokemon_cleaned
+CHANGE height_m height_m decimal(4,1) AFTER is_legendary;
 
+ALTER TABLE pokemon_cleaned
+CHANGE weight_kg weight_kg decimal(5,1) AFTER height_m;
 
+ALTER TABLE pokemon_cleaned
+CHANGE base_total base_total INT AFTER weight_kg;
 
+ALTER TABLE pokemon_cleaned
+CHANGE hp hp INT AFTER base_total;
 
+ALTER TABLE pokemon_cleaned
+CHANGE attack attack INT AFTER hp;
 
+ALTER TABLE pokemon_cleaned
+CHANGE sp_attack sp_attack INT AFTER attack;
 
+ALTER TABLE pokemon_cleaned
+CHANGE defense defense INT AFTER sp_attack;
 
+ALTER TABLE pokemon_cleaned
+CHANGE sp_defense sp_defense INT AFTER defense;
 
-
-
-
-
-
-
+ALTER TABLE pokemon_cleaned
+CHANGE speed speed INT AFTER sp_defense;
 
 
 
