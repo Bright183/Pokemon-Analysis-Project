@@ -1,6 +1,6 @@
 Pokémon Data Analysis Project
 
-- Only includes the Pokémon from the first 7 Generations (Not including megas)
+- Only includes the Pokémon from the first 7 Generations (Not including megas, ultra beasts, and different forms)
 
 Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon
 
