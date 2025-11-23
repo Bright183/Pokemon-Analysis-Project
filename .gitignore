@@ -1,0 +1,15 @@
+# --- Large auto-generated SQL dump temp files (not your SQL scripts)
+*.sql~
+*.dump
+*.bak
+
+
+# --- Excel temporary files (safe to ignore)
+~$*
+
+
+# --- Tableau auto-generated files
+Logs/
+Temp/
+TempExtracts/
+*.twbr
