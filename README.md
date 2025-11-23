@@ -15,7 +15,7 @@ Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon
    a. Removed Duplicates  
    b. Standardized the Data  
    c. Null Values or Blank values  
-   d. Removed Any Columns
+   d. Removed Any Columns  
    e. Reordered Columns (Better readability)  
 
 
