@@ -1,0 +1,2552 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='pokemon_cleaned_data' inline='true' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='pokemon_cleaned_data' name='textscan.034stec020fglw11sxoub1o3wa2o'>
+            <connection class='textscan' directory='C:/Users/Bright/Documents/Data Analytics/Projects/Pokemon Data Analysis' filename='pokemon_cleaned_data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.034stec020fglw11sxoub1o3wa2o' name='pokemon_cleaned_data.csv' table='[pokemon_cleaned_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=';'>
+            <column datatype='integer' name='pokedex_number' ordinal='0' />
+            <column datatype='string' name='name' ordinal='1' />
+            <column datatype='string' name='type1' ordinal='2' />
+            <column datatype='string' name='type2' ordinal='3' />
+            <column datatype='integer' name='generation' ordinal='4' />
+            <column datatype='real' name='percentage_male' ordinal='5' />
+            <column datatype='integer' name='capture_rate' ordinal='6' />
+            <column datatype='integer' name='is_legendary' ordinal='7' />
+            <column datatype='real' name='height_m' ordinal='8' />
+            <column datatype='real' name='weight_kg' ordinal='9' />
+            <column datatype='integer' name='base_total' ordinal='10' />
+            <column datatype='integer' name='hp' ordinal='11' />
+            <column datatype='integer' name='attack' ordinal='12' />
+            <column datatype='integer' name='sp_attack' ordinal='13' />
+            <column datatype='integer' name='defense' ordinal='14' />
+            <column datatype='integer' name='sp_defense' ordinal='15' />
+            <column datatype='integer' name='speed' ordinal='16' />
+            <column datatype='string' name='abilities' ordinal='17' />
+            <column datatype='real' name='against_bug' ordinal='18' />
+            <column datatype='real' name='against_dark' ordinal='19' />
+            <column datatype='real' name='against_dragon' ordinal='20' />
+            <column datatype='real' name='against_electric' ordinal='21' />
+            <column datatype='real' name='against_fairy' ordinal='22' />
+            <column datatype='real' name='against_fight' ordinal='23' />
+            <column datatype='real' name='against_fire' ordinal='24' />
+            <column datatype='real' name='against_flying' ordinal='25' />
+            <column datatype='real' name='against_ghost' ordinal='26' />
+            <column datatype='real' name='against_grass' ordinal='27' />
+            <column datatype='real' name='against_ground' ordinal='28' />
+            <column datatype='real' name='against_ice' ordinal='29' />
+            <column datatype='real' name='against_normal' ordinal='30' />
+            <column datatype='real' name='against_poison' ordinal='31' />
+            <column datatype='real' name='against_psychic' ordinal='32' />
+            <column datatype='real' name='against_rock' ordinal='33' />
+            <column datatype='real' name='against_steel' ordinal='34' />
+            <column datatype='real' name='against_water' ordinal='35' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pokedex_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pokedex_number]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>pokedex_number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type1]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>type1</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type2]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>type2</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>generation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[generation]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>generation</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>percentage_male</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[percentage_male]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>percentage_male</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>capture_rate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[capture_rate]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>capture_rate</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_legendary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_legendary]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>is_legendary</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>height_m</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[height_m]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>height_m</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weight_kg</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[weight_kg]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>weight_kg</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>base_total</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[base_total]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>base_total</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hp</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hp]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>hp</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attack</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[attack]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>attack</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sp_attack</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sp_attack]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>sp_attack</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>defense</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[defense]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>defense</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sp_defense</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sp_defense]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>sp_defense</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>speed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[speed]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>speed</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>abilities</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[abilities]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>abilities</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_bug</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_bug]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_bug</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_dark</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_dark]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_dark</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_dragon</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_dragon]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_dragon</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_electric</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_electric]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_electric</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_fairy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_fairy]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_fairy</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_fight</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_fight]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_fight</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_fire</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_fire]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_fire</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_flying</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_flying]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_flying</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_ghost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_ghost]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_ghost</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_grass</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_grass]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_grass</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_ground</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_ground]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_ground</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_ice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_ice]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_ice</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_normal</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_normal]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_normal</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_poison</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_poison]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_poison</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_psychic</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_psychic]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_psychic</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_rock</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_rock]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_rock</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_steel</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_steel]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_steel</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>against_water</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[against_water]</local-name>
+            <parent-name>[pokemon_cleaned_data.csv]</parent-name>
+            <remote-alias>against_water</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Type1' datatype='string' name='[Type1 (copy)_3298323786628890624]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[type1]' />
+      </column>
+      <column caption='pokemon_cleaned_data.csv' datatype='table' name='[__tableau_internal_object_id__].[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]' role='measure' type='quantitative' />
+      <column caption='Abilities' datatype='string' name='[abilities]' role='dimension' type='nominal' />
+      <column caption='Against Bug' datatype='real' name='[against_bug]' role='measure' type='quantitative' />
+      <column caption='Against Dark' datatype='real' name='[against_dark]' role='measure' type='quantitative' />
+      <column caption='Against Dragon' datatype='real' name='[against_dragon]' role='measure' type='quantitative' />
+      <column caption='Against Electric' datatype='real' name='[against_electric]' role='measure' type='quantitative' />
+      <column caption='Against Fairy' datatype='real' name='[against_fairy]' role='measure' type='quantitative' />
+      <column caption='Against Fight' datatype='real' name='[against_fight]' role='measure' type='quantitative' />
+      <column caption='Against Fire' datatype='real' name='[against_fire]' role='measure' type='quantitative' />
+      <column caption='Against Flying' datatype='real' name='[against_flying]' role='measure' type='quantitative' />
+      <column caption='Against Ghost' datatype='real' name='[against_ghost]' role='measure' type='quantitative' />
+      <column caption='Against Grass' datatype='real' name='[against_grass]' role='measure' type='quantitative' />
+      <column caption='Against Ground' datatype='real' name='[against_ground]' role='measure' type='quantitative' />
+      <column caption='Against Ice' datatype='real' name='[against_ice]' role='measure' type='quantitative' />
+      <column caption='Against Normal' datatype='real' name='[against_normal]' role='measure' type='quantitative' />
+      <column caption='Against Poison' datatype='real' name='[against_poison]' role='measure' type='quantitative' />
+      <column caption='Against Psychic' datatype='real' name='[against_psychic]' role='measure' type='quantitative' />
+      <column caption='Against Rock' datatype='real' name='[against_rock]' role='measure' type='quantitative' />
+      <column caption='Against Steel' datatype='real' name='[against_steel]' role='measure' type='quantitative' />
+      <column caption='Against Water' datatype='real' name='[against_water]' role='measure' type='quantitative' />
+      <column caption='Attack' datatype='integer' name='[attack]' role='measure' type='quantitative' />
+      <column caption='Base Total' datatype='integer' name='[base_total]' role='measure' type='quantitative' />
+      <column caption='Capture Rate' datatype='integer' name='[capture_rate]' role='measure' type='quantitative' />
+      <column caption='Defense' datatype='integer' name='[defense]' role='measure' type='quantitative' />
+      <column caption='Generation' datatype='integer' name='[generation]' role='measure' type='quantitative' />
+      <column caption='Height M' datatype='real' name='[height_m]' role='measure' type='quantitative' />
+      <column caption='Hp' datatype='integer' name='[hp]' role='measure' type='quantitative' />
+      <column caption='Is Legendary' datatype='integer' name='[is_legendary]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Percentage Male' datatype='real' name='[percentage_male]' role='measure' type='quantitative' />
+      <column caption='Pokedex Number' datatype='integer' name='[pokedex_number]' role='dimension' type='ordinal' />
+      <column caption='Sp Attack' datatype='integer' name='[sp_attack]' role='measure' type='quantitative' />
+      <column caption='Sp Defense' datatype='integer' name='[sp_defense]' role='measure' type='quantitative' />
+      <column caption='Speed' datatype='integer' name='[speed]' role='measure' type='quantitative' />
+      <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+      <column caption='Type2' datatype='string' name='[type2]' role='dimension' type='nominal' />
+      <column caption='Weight Kg' datatype='real' name='[weight_kg]' role='measure' type='quantitative' />
+      <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/Bright/AppData/Local/Temp/TableauTemp/#TableauTemp_1q0be3e0mx3emk1anhruw1x5c300.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/23/2025 09:17:14 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>pokedex_number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[pokedex_number]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pokedex_number</remote-alias>
+              <ordinal>0</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>type1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[type1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>type1</remote-alias>
+              <ordinal>2</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>type2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[type2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>type2</remote-alias>
+              <ordinal>3</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>generation</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[generation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>generation</remote-alias>
+              <ordinal>4</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>percentage_male</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[percentage_male]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>percentage_male</remote-alias>
+              <ordinal>5</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>capture_rate</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[capture_rate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>capture_rate</remote-alias>
+              <ordinal>6</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>34</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_legendary</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[is_legendary]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_legendary</remote-alias>
+              <ordinal>7</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>height_m</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[height_m]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>height_m</remote-alias>
+              <ordinal>8</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>51</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>weight_kg</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[weight_kg]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>weight_kg</remote-alias>
+              <ordinal>9</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>422</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>base_total</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[base_total]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>base_total</remote-alias>
+              <ordinal>10</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>203</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>hp</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[hp]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>hp</remote-alias>
+              <ordinal>11</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>99</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>attack</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[attack]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>attack</remote-alias>
+              <ordinal>12</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>114</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sp_attack</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[sp_attack]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sp_attack</remote-alias>
+              <ordinal>13</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>111</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>defense</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[defense]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>defense</remote-alias>
+              <ordinal>14</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>109</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sp_defense</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[sp_defense]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sp_defense</remote-alias>
+              <ordinal>15</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>97</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>speed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[speed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>speed</remote-alias>
+              <ordinal>16</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>113</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>abilities</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[abilities]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>abilities</remote-alias>
+              <ordinal>17</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>482</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_bug</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_bug]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_bug</remote-alias>
+              <ordinal>18</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_dark</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_dark]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_dark</remote-alias>
+              <ordinal>19</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_dragon</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_dragon]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_dragon</remote-alias>
+              <ordinal>20</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_electric</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_electric]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_electric</remote-alias>
+              <ordinal>21</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_fairy</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_fairy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_fairy</remote-alias>
+              <ordinal>22</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_fight</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_fight]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_fight</remote-alias>
+              <ordinal>23</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_fire</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_fire]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_fire</remote-alias>
+              <ordinal>24</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_flying</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_flying]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_flying</remote-alias>
+              <ordinal>25</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_ghost</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_ghost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_ghost</remote-alias>
+              <ordinal>26</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_grass</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_grass]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_grass</remote-alias>
+              <ordinal>27</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_ground</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_ground]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_ground</remote-alias>
+              <ordinal>28</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_ice</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_ice]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_ice</remote-alias>
+              <ordinal>29</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_normal</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_normal]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_normal</remote-alias>
+              <ordinal>30</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_poison</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_poison]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_poison</remote-alias>
+              <ordinal>31</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_psychic</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_psychic]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_psychic</remote-alias>
+              <ordinal>32</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_rock</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_rock]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_rock</remote-alias>
+              <ordinal>33</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_steel</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_steel]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_steel</remote-alias>
+              <ordinal>34</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>against_water</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[against_water]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>against_water</remote-alias>
+              <ordinal>35</ordinal>
+              <family>pokemon_cleaned_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:type1:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;ghost&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;bug&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;water&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;grass&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;dark&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;normal&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;fighting&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ground&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ice&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;poison&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;rock&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;steel&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;psychic&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;fire&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;flying&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;dragon&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;fairy&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;electric&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='pokemon_cleaned_data.csv' id='pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768'>
+            <properties context=''>
+              <relation connection='textscan.034stec020fglw11sxoub1o3wa2o' name='pokemon_cleaned_data.csv' table='[pokemon_cleaned_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=';'>
+                  <column datatype='integer' name='pokedex_number' ordinal='0' />
+                  <column datatype='string' name='name' ordinal='1' />
+                  <column datatype='string' name='type1' ordinal='2' />
+                  <column datatype='string' name='type2' ordinal='3' />
+                  <column datatype='integer' name='generation' ordinal='4' />
+                  <column datatype='real' name='percentage_male' ordinal='5' />
+                  <column datatype='integer' name='capture_rate' ordinal='6' />
+                  <column datatype='integer' name='is_legendary' ordinal='7' />
+                  <column datatype='real' name='height_m' ordinal='8' />
+                  <column datatype='real' name='weight_kg' ordinal='9' />
+                  <column datatype='integer' name='base_total' ordinal='10' />
+                  <column datatype='integer' name='hp' ordinal='11' />
+                  <column datatype='integer' name='attack' ordinal='12' />
+                  <column datatype='integer' name='sp_attack' ordinal='13' />
+                  <column datatype='integer' name='defense' ordinal='14' />
+                  <column datatype='integer' name='sp_defense' ordinal='15' />
+                  <column datatype='integer' name='speed' ordinal='16' />
+                  <column datatype='string' name='abilities' ordinal='17' />
+                  <column datatype='real' name='against_bug' ordinal='18' />
+                  <column datatype='real' name='against_dark' ordinal='19' />
+                  <column datatype='real' name='against_dragon' ordinal='20' />
+                  <column datatype='real' name='against_electric' ordinal='21' />
+                  <column datatype='real' name='against_fairy' ordinal='22' />
+                  <column datatype='real' name='against_fight' ordinal='23' />
+                  <column datatype='real' name='against_fire' ordinal='24' />
+                  <column datatype='real' name='against_flying' ordinal='25' />
+                  <column datatype='real' name='against_ghost' ordinal='26' />
+                  <column datatype='real' name='against_grass' ordinal='27' />
+                  <column datatype='real' name='against_ground' ordinal='28' />
+                  <column datatype='real' name='against_ice' ordinal='29' />
+                  <column datatype='real' name='against_normal' ordinal='30' />
+                  <column datatype='real' name='against_poison' ordinal='31' />
+                  <column datatype='real' name='against_psychic' ordinal='32' />
+                  <column datatype='real' name='against_rock' ordinal='33' />
+                  <column datatype='real' name='against_steel' ordinal='34' />
+                  <column datatype='real' name='against_water' ordinal='35' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Total Stats Per Type</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run>Average of Base Total for each Type. The data shows that dragon typing has the highest stats out of all the pokemon versus bug having the lowest stats.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column-instance column='[base_total]' derivation='Avg' name='[avg:base_total:qk]' pivot='key' type='quantitative' />
+            <column caption='Base Total' datatype='integer' name='[base_total]' role='measure' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:base_total:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:base_total:qk]' scope='rows' value='Avg. Base Stat Total' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' value='Type'>
+              <formatted-text>
+                <run>Type</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:base_total:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{A4B90101-8A1C-4099-B460-C39BE3E3F212}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Hp Per Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column-instance column='[hp]' derivation='Avg' name='[avg:hp:qk]' pivot='key' type='quantitative' />
+            <column caption='Hp' datatype='integer' name='[hp]' role='measure' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:hp:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:hp:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{E81607AF-2711-48D7-84F6-0E587C968AD7}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Speed Per Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column-instance column='[speed]' derivation='Avg' name='[avg:speed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Speed' datatype='integer' name='[speed]' role='measure' type='quantitative' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:speed:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:speed:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{BAFE24F1-45F5-4627-8689-D918DBDF0810}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Attack Per Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column caption='Attack' datatype='integer' name='[attack]' role='measure' type='quantitative' />
+            <column-instance column='[attack]' derivation='Avg' name='[avg:attack:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;dragon&quot;</bucket>
+              <bucket>&quot;fighting&quot;</bucket>
+              <bucket>&quot;ground&quot;</bucket>
+              <bucket>&quot;steel&quot;</bucket>
+              <bucket>&quot;rock&quot;</bucket>
+              <bucket>&quot;dark&quot;</bucket>
+              <bucket>&quot;fire&quot;</bucket>
+              <bucket>&quot;normal&quot;</bucket>
+              <bucket>&quot;grass&quot;</bucket>
+              <bucket>&quot;water&quot;</bucket>
+              <bucket>&quot;ice&quot;</bucket>
+              <bucket>&quot;ghost&quot;</bucket>
+              <bucket>&quot;poison&quot;</bucket>
+              <bucket>&quot;electric&quot;</bucket>
+              <bucket>&quot;bug&quot;</bucket>
+              <bucket>&quot;flying&quot;</bucket>
+              <bucket>&quot;psychic&quot;</bucket>
+              <bucket>&quot;fairy&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:attack:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{45B92AC3-C069-4ED1-A03C-4DAE0FC1AE62}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Sp Attack Per Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column-instance column='[sp_attack]' derivation='Avg' name='[avg:sp_attack:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Sp Attack' datatype='integer' name='[sp_attack]' role='measure' type='quantitative' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:sp_attack:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:sp_attack:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{DD2EF130-C3B4-4677-AC5C-CF5534D60E9E}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Defense Per Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column-instance column='[defense]' derivation='Avg' name='[avg:defense:qk]' pivot='key' type='quantitative' />
+            <column caption='Defense' datatype='integer' name='[defense]' role='measure' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:defense:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:defense:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{86E83010-FB17-4D42-B1DF-91192E38763A}' />
+    </worksheet>
+    <worksheet name='Sheet 7'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Sp Defefense Per Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pokemon_cleaned_data' name='federated.1cg2umh12hh81b18jjhoe0xsajnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
+            <column-instance column='[sp_defense]' derivation='Avg' name='[avg:sp_defense:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[type1]' derivation='None' name='[none:type1:nk]' pivot='key' type='nominal' />
+            <column caption='Sp Defense' datatype='integer' name='[sp_defense]' role='measure' type='quantitative' />
+            <column caption='Type' datatype='string' name='[type1]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:sp_defense:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[avg:sp_defense:qk]</rows>
+        <cols>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</cols>
+      </table>
+      <simple-id uuid='{5F5C1244-D3B6-4A6D-9669-C0BBEB2C93AE}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Stats by Type'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Stats By Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98684' id='16' param='vert' type-v2='layout-flow' w='99318' x='341' y='658'>
+            <zone h='3372' id='17' type-v2='title' w='99318' x='341' y='658'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='95312' id='7' param='horz' type-v2='layout-flow' w='99318' x='341' y='4030'>
+              <zone h='95312' id='5' type-v2='layout-basic' w='94337' x='341' y='4030'>
+                <zone h='42571' id='3' name='Sheet 1' w='94337' x='341' y='4030'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='27561' id='9' name='Sheet 2' w='34598' x='341' y='46601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='25180' id='10' name='Sheet 3' w='34598' x='341' y='74162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='27561' id='11' name='Sheet 4' w='33038' x='34939' y='46601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='25180' id='12' name='Sheet 5' w='33038' x='34939' y='74162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='27561' id='13' name='Sheet 6' w='26701' x='67977' y='46601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='25180' id='14' name='Sheet 7' w='26701' x='67977' y='74162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone fixed-size='117' h='95312' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='4981' x='94678' y='4030'>
+                <zone h='31744' id='8' name='Sheet 1' pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type-v2='color' w='4981' x='94678' y='4030'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true'>Average Stats By Type</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1700' minheight='1700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98684' id='18' param='vert' type-v2='layout-flow' w='99318' x='341' y='658'>
+                <zone h='3372' id='17' type-v2='title' w='99318' x='341' y='658'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42571' id='3' is-fixed='true' name='Sheet 1' w='94337' x='341' y='4030'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='31744' id='8' name='Sheet 1' pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type-v2='color' w='4981' x='94678' y='4030'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='212' h='27561' id='9' is-fixed='true' name='Sheet 2' w='34598' x='341' y='46601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='212' h='27561' id='11' is-fixed='true' name='Sheet 4' w='33038' x='34939' y='46601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='212' h='27561' id='13' is-fixed='true' name='Sheet 6' w='26701' x='67977' y='46601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='194' h='25180' id='10' is-fixed='true' name='Sheet 3' w='34598' x='341' y='74162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='194' h='25180' id='12' is-fixed='true' name='Sheet 5' w='33038' x='34939' y='74162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='194' h='25180' id='14' is-fixed='true' name='Sheet 7' w='26701' x='67977' y='74162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{0E70D002-490E-4605-9DF8-037EF52E02E3}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='96'>
+            <card type='caption' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FDC71A69-0615-4191-AC8A-B6417812532A}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</field>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type2:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CDC4049F-D306-483D-84E9-BE743E5CCA8E}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CDC7DC7F-B79C-43B6-8263-073AACC466B1}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A034C110-BC86-4934-A475-91282FFB17DB}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{117DC463-3719-44ED-94E9-8F8F9866FFC8}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C9DEC608-CADE-4F69-A25E-788D8D41A839}' />
+    </window>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{33595DF0-2CE8-4438-AFE1-4E0825D1C320}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Stats by Type'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 3'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 4'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 5'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 6'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 7'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{A62EEE5B-BF26-4454-9D87-4C4C454AB79D}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 4' width='192'>
+      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
+      RK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 5' width='192'>
+      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
+      AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 6' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAJ40lEQVR4nO3dyW8b5x3G8WcW7ptIUdZiSbC8tGltN2jSuogNB2gKJIfUBnrOqZei96JA
+      T+1/UPTUnnLsLTkUBnpoExhGk/rgwEBhJ3G8RnYkahdJkRpuM28PUh27nBmSNvff8zkZnpfD
+      1za/Hs6Qr0ZTSikQCaUPegJEg8QASDQGMKRu37yO6zdvN29QDr768g6c/k9pLJmDngC5m82m
+      EVRp3Lzxb+Tz+8hXNaSjdYRiU6gW93D8e6/wf68u4N/hkDJDUUQjUWzl1pCeiEOZJjQFJBIx
+      7O8XsLVdGPQUx4LGq0DDzMby8iqy6QT0cAKRoDHoCY2dlw7Atm0YBv9haDTxLRCJxgBINAZA
+      ojEAEo0BkGgMgERjACQaAyDRGACJxgBItLa+DWrXq3ic28SRdAJbu3sIBzXUlYn52WkAgGM7
+      2Fne8Hx8PJtEOBntzoyJuqitAIxACOGACdPQ4UBDwwGUXYXjOHAcB41KHZ++/w/Px5+9dA6L
+      PzrZtUkTdUvbR4BKpYLNRhWwNQTCIahAGLquQynV8stwuq7DNLn0gIZP20eApaVjPZ0I0SDw
+      JJhEYwAkGgMg0RgAicYASDQGQKIxABKNAZBoDIBEYwAkGgMg0RgAicYASDQGQKIxABKNAZBo
+      ba8Iu//1ChbnJrG2XUZAVVFTJo4fW+j1/Ih6qu0VYcl4FJFYAuGiBdsOwDxcD+w4Dmzb9n28
+      4zhoNBpdmTBRN7V9BHAcB4VCEUoByUQcjmZyTTCNvLaPAEePzgEAUqmezoeor3gSTKIxABKN
+      AZBoDIBEYwAkGgMg0RgAicYASDQGQKIxABKNAZBoDIBEYwAkGgMg0RgAidb2KpVarQbT0FAo
+      VRAL6qgpE/FoqJdzI+q5tleEPVz+BolIEMpWyOsaDKUQnZ/nkkgaaW0fAeoVCzUDqFZtBEI6
+      GsrgkkgaeW0viTx79gyUUlBKQdM0qF7PjKgPOvpvWdM0aJp28OueTIeov3gViERjACQaAyDR
+      GACJ1tdrk6paR+P6Hc/txivz0GfSfZwRSccjAInGAEg0BkCiMQASjQGQaAyARGMAJBoDINEY
+      AInGAEi0jr4KUd7Lo1CuIRbSUVcBZDO8YRiNto4CKBSK2NouojGVgWZbcCYSna0JbmOcw7XD
+      1EcdBZBOp1G1NRh2HQ10fptUZSv4vbx1XYfOtcPURx292iKxBJZiiV7NhajveBJMojEAEo0B
+      kGgMgEQbyksuql6BvXbLc7s+eQJ6NNPHGdG4Gs4ASuuwPvil5/bwz/8I/dTbfZwRjSu+BSLR
+      GACJxgBItKE8B2iXnc+j9NHHntujFy4gMDvTxxnRqBntAAoFFD740HN78MQJBkC++BaIRGMA
+      JBoDINEYAInGAEi0jq4C7Wyto1iuIRLSUVcm5menezUvor7oKIBKpYJyyYIRSAB29WANbw/W
+      BKtW4+yD/bV+Xpv3JyZfHQUQi8ZQdwyETRNOINyzNcFOq/0ZB/trOU43YJomlnd28OdPrnmO
+      +9X5iziRzfrui8ZTRwGkMlmkRvBbyPv1Gm7lVj23l2vVPs6GhglPgkk0BkCiMQASjQGQaAyA
+      RGMAJBoDINEYAInGAEg0BkCijfSa4G4rrRWwfPWO5/alt08jOhnv44yo13gEINEYAInGt0Av
+      YmMd+OyG9/aLbwKJZP/mQy+MAbyISgVYy3lv5yKckcEAemh5dxufPLzvuf3ymVeRCIVx824O
+      H1770nPc7967gEQ01IspitdRAKXiLu49fILJdAINZeL4sYVezWss7NdqeJzf8dzecBwAwO6e
+      hduPNrzH2Qfjrj3I4+td98U7mYiJS6cnAQB7xQLqtZrrONMMIDkx0db8JWgK4MqVK7h06ZLr
+      4GgshuzUFDRlwzxcDzwKa4Kdlvs7HHf4gmw1TnMc+C3GtG0bqo392W0+79NxSnmOUVBP1z/f
+      +/wWtjfWXcel0hm8dv6i7/NJ0hRALpfzjEA5DqZnZlArF3p6n+BurwnWW+7vcJzuf1Hsf+PQ
+      YpxhGEAb+zPafN6n4zTNc4wG7WBuADSfcdC+HZf726eorGy6DgvPT2H28gXfeY2DpgBmZ2cB
+      uB8JjEAYBoBgkofQcVBZ3UL5gcda6RZRjoumALze/pBcV+/9Ezv7267bZpNzOL/0Zp9n1D2u
+      J8Ff/OcG1jaK+MlbP0PM/90DCXD13ke4v/WV67bX5n/8NIBb1/6A/eIT13GTc+dw8vVf92yO
+      L8o1gGAwhJ09CyEZR0HqksLm59jbueu6LRQdzp+75PoSX99YQ3lzHSX/iydEI8/1CJBOT+L4
+      6QnE+TEZ9cD7d/6EfM3985Ez6R/inYVf9G0urkcAy6ogGOCrn8af66s8Eg5ibWMXVRsweRJM
+      A9IoPwAc90+OtMAEjPDL/3TypgCKm1vYLpVhNcCTYBoo69FfoOp5122B7E8RWXjvpZ+j6SUe
+      ihrY2SogmYhD+XygSDQOmgOIpTGdiWP10QNYvApEY64pAKUUyvlt7JkxJPn+n8ZcUwCVzXvQ
+      pl/FyVQY+4OYEVEfNZ0ER458B28dAYDv9n82RC8ivwwoj6+Uh1NAxPuuLp4X+3OPH2NycRHB
+      l54dUY/d+ivQqLhvW7gAnHzH86GuAdy4/i+sbGxjIV/C6z/4flfmSDSMXAOw61UkJ+cwN5V+
+      7vdrVglbBQuxkIa6CiCbSfVlkkS94hrA3OwR/P3jz/DGG+ee+/2V1VVoRgSOY0DZFpyJBJdE
+      uhj0kkjlMw6qvXHqmXFAe+N8nvX/9ufNeXac7x/j23EGAK+PrByl4Pg8b1MASinsV2ycOnWq
+      6WsQqWQS+YIF23AALon0NCpLIv3Gac+M8355PT/O73PT5/fnTX92nO8fo/396Yfjfv/b3zRF
+      2LQHa2cFdx+vY69kNV0jzUzNIDPV8jmJRkZTANHJeVx+dx6NKu+dS+PP8xhihviDmGj88fue
+      JBoDINEYAInGAEg0BkCiMQASjQGQaAyARGMAJBoDINEYAInGAEg0BkCiMQASraMfAZ1beQJH
+      D0HVyqjxNqk0BjoKIBGP4eFyDqlMirdJ9RnHNcGt9udt4GuC/ei6gamZaSTCJm+T6oNrglvt
+      z1sv1wS76SiAaCKFaKKTRxANN54Ek2gMgERjACQaAyDRGACJxgBINAZAojEAEo0BkGgMgERj
+      ACQaAyDRGACJxgBINAZAonW0HgAALMuCAQc1ZSIe5V1kaLR1FIC1l8cX97/BkWwKSilE5+e5
+      JNIFl0S22p+3oV4SWSgWUbNKqFTDgGZwSaQHLolstT9vQ70kcuboImaOLkIp5Vs70ajo+BwA
+      OKjPr3aiUcGrQCQaAyDRGACJxgBINAZAojEAEo0BkGgMgERjACQaAyDRGACJxgBItP8CfPzU
+      DaayyuwAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 7' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAL6ElEQVR4nO3dyW8cxxkF8Ffd07Nzdi7WxliWbdmwk8CBE1gHOTrmlGNySuJbbgmQ/Dm+
+      Roec4kMQIAESAwZkJEZysGXDNK1dlDikNAs5a890VQ4ERPYMLVUNZ+PU+wE6EOpPVUPyid3N
+      x6ZQSikQWcqZ9QaIZokBIKsxADRGEv/79BP894sNKKWG/swjwWsAGqcHG5+jv1RC+c4dNNpN
+      pKICzf02ChfewDtvvzrr7Q3hVwAaq1gyjWS6gO3tLWQTLnrwAOEgl1ua9daOdeKvAEopCCHG
+      tR9aALLvY6v8FJmkh2SmBM+d9Y6+24kDEAQBXHeOXyHRc/AUiKzGAJDVGACyGgNAVouYHFx5
+      soN6o4tU3EFXRnD+zOqk9kU0FUYBgFLYr9fhRvMQQRdSSkgp5/a7fEQvYhSARDKJ4uoK4i7Q
+      9+JwHAdKKd4GpVOL3wcgq/EimKzGAJDVGACymtldoOdQrS7kdlXvYNeBu74yrqWJRjbeANzf
+      1TvYcxkAmgs8BSKrMQBkNQaArMYAkNXGdhF8Eo3Nhyj/7T9ax0aWElj/4GcT3hHZwqwNultG
+      rdFFIioQiaexXMyPZRNBs4P2vW2tY71ceixrEgGGAeh2O2i32ojFUtjbb6CYzx62QaXU/4cU
+      0O/3n70ZyMBkNDRLdBJGAUil0uipCOJRD8IRoTaodBxofxoLIBI5XNp19Mt0AuHZoPwl+pv/
+      0JtNFBD90a+016LFZxSATL6IzHjOesZGPvkG/mcfah3r5F9mACiEd4HIagwAWY0BIKsxAGQ1
+      BoCsNhffCZ6V8qOHuPftptaxyXQab73z7oR3RNNmdQD8bhf1akXrWGnyjT46NXgKRFZjAMhq
+      DABZzegaoLlfQ63RRSrmwJcRrJTmrBdBZMgoAHv1Oiq1FlQhAxV0IOXs26AmF6cKavRZpdhC
+      XUBGAYhEPKTiMSgloYQ7F21Q5eifxQmI0KxjMivCs7QYjD6iy2tnsDypnRDNAC+CyWoMAFmN
+      J7Uj+uc3G/jo5udax14slvC7969NeEc0CgZgRJVWC5u7O1rHevz9CXOLp0BkNQaArMYAkNUY
+      ALIaL4Jn4FG9i609X+vYbNzFa8vJCe/IXgzADOw0e/iq3NI69kwmygBMkFEAGns1lHeryGaT
+      UCI6tmeDEs2K2aMRl7LwantoNRpwounwb4q3rA2qlMnrHZhlC3VuGAVA+k2ksiWI3j72Wj2r
+      26BCGNw/GJxlC3VuGL1n3VgaxRgAJFGYzH6Ipoq3QclqDABZjSeXp8zdm3/C1sZHWscWzvwY
+      b7z3xwnv6HRjAE6ZTnMHe0+/1jo2vnRmwrs5/XgKRFZjAMhqPAWyyN3tGsqVhtaxxWwSl84u
+      /s1uBsAif//sFv76qd7TsK/+YB1/+MV7z95u3rgBf/OW1mz01UtIXXnvxQfOAQaAtHQ+v4nm
+      xx9rHZvqXjs1AeA1AFnN6CtAa7+O2n4buVwKPekim2ZNl043owDEU0vwn1bxtNKHkhJLyXNs
+      g+oNj60NqqQaeVYazcqRX6+S4Vm3fhtC82McpF+C8tKH/1bzS0BzbZF4GXDTLz7wCKMAqF4L
+      0WQWvVYVPemwDao/PLY2qHDEyLOO0awz8usVTngWX/8F8PXuPrlv/RJYfvPZ23t3PwRkW2s2
+      +crvEcm8pb1PYIQ26JkVQKmc0SJEs9Dsvjh0I90FEkL/fxKiWfntn3+NQD3/vIR3gchqDABZ
+      jQEgqzEAZDUGgKzGAJDVGACyGgNAVmMAyGpGAVBKodv1EfT78Hu9Se2JaGqMqhA7jx7AFzH0
+      W3Wk8ysoFbJQSh38gX7TEOogTM/eVAazGJw1WnZs68Lk9UKFZ0+wZ7Nl1cjvq6E9G216cPag
+      xKg3qkw3Gpo1/ZgaBaDr+2g1m8iu5rG7u4tSIQsAh5VoA0eryCaz6gSzgBqYNRgdmjX7LA7N
+      Gn4yjTyLwcq3SR16cM/6Bj9GJqcZSg3Wxc3q3yYVd8AwAOfOX0Ct0UbMBdLnMhBCQAhxUIcW
+      ZnVo98hvTjSqJSM8K00qvhAD65qU+sKzpnXo8KxZpXnU2bGuq/1/+PCsCccRQGhWf13HcYzX
+      NQqAE4mikIsaLUA0z3gXiKzGAJDVGACyGgNAVmMAyGoMAFmNASCrMQBkNQaArGbcBu10upBB
+      H72+/uMMieaVURWivHUfvhOH02+jJx18b/38swKSaRt09ELb4KzRsmNb17QeFpo168KNPDtU
+      pDN6Zw0Wy0afFTBrg5o8O3VwdqJlOL/XQ6vZQiSThIuBd6xhg3XUWvJQpXlKteTBWcMS6tj2
+      bNoGNQ354TqDex591qRyqNTgns0arBOtQ587v456s41kNII+nIE2qElLcYxtUJOG42Cj80Rt
+      0Bm1MtkGfe7shNugHvJZDwAQM1qGaD7xLhBZjQEgqzEAZDUGgKzGAJDVGACyGgNAVmMAyGoM
+      AFmNASCrGVUhnpQfoyMdOP0OvGQGy8X8pPZFNBVGAfCiHnYeP0U+n0atVkcxnz18LqhJDVUB
+      /X7/2ZuB1P/ZAoXwrEn9VUGNPqvCs0qZvN6B2ZOsK82elRl+vSazcuTXq2R41oV+pS2QEurI
+      rEkbNAgkEJp9MaMARNwIlrIZxDwXTiYOx3GglDpogzpmzwaNRA6Xdh39Bp9AeFYZNUlFaNao
+      hSrCs6bPBg3NnmRdk2ehisHXazLrjPx6hROeNeE6DhCa1d+z65qva3R0KpNDKpMzWoBonvEi
+      mKzGAJDVGACyGgNAVmMAyGoMAFltKACNRmMW+yCaiaEAXL9+nSEgaxx7CnT9+nVsbm5Oey9E
+      Uzf0neCrV68CAIKAz/6kxTcUgMuXL8PvtNDuHTyE72gTY69WwV67h6QH+DKCtZXi9HZKNAHH
+      doE++/cN3P72AX7+mw+QOdJT63Y76LR8IOFBBT6kzLMNqjfMNqjm7Fy0Qc+dv4BHO3tIDFwh
+      JOIJ7DV9uAIIIh7boPrDbINqmos2aLNRx1ppBb4EvCOfm+lsHuksfwiGFsexsa7XG/CSScRG
+      e8Av0alxbAAKuQz2my3TR/4TnTrHBuBJpYrt29+gzTuhtOCGAlB9tAU3lcHbP7mCNE+BaMEN
+      BWCplMfj25vY2PgWPZ4D0YIbCkAkmsTZs2fRqe2iN9rvKiM6NYYCoGQfUgKvvP1DpHgKRAtu
+      KACd3Vt43ImjevcOmrPYEdEUDX0jLFa6iCvfr0CIS0jOYkdEUzT0FcBxPZS37uHmza94DUAL
+      b/gaIOgh4nmoPN3Bg4ePQ38ngx6+uPkVtu7fxe7T6tQ2STQpQ6dAzZ1NfLFxH3EvjeWzL4X+
+      7uGdW6jWaijms6jy2aDas2yDnqI2aGrtMq69v4KlVBLxgbtAFy5dRmGtgV63BTeaYBtUf5ht
+      UE3TboMOvSohHJSKBVTKO/CPGUin08gXV7C6XDBaiGgeHRuXG5/8C493Kjj7pIIr774z7T0R
+      Tc2xX9cSnkA8u4rXL65Pez9EU3VsAJZX19Cq7iKR48/80mIbCkDQ66BSayCdzoR+GoxoEQ0F
+      oN9poLrfRrPdNrj+JjqdhqsQSyVc++n7kHwuEFngO2+aOi7Pf2jx8enQZDUGgKzGAJDVjIoT
+      Skncu/cAmVQcXenipdXSpPZFNBVGASg/vIvt3RrcyCqgfEgp2QbVG2YbVHN25m3Q58mX1uDL
+      CDxXIECUbVD9YbZBNc3Fs0G/SyyRxIX1C0YLEM0zXgST1RgAshoDQFZjAMhqDABZjQEgqzEA
+      ZDUGgKzGAJDVGACymlEVottuotroIOkJ+NJBqZCb1L6IpsIoAK7rYGd7G6l4BMlsiW1Q/WG2
+      QTVn57oN2m53EHVcLOXz2Kvvw1kpsg2qN8w2qKa5boOmMzm8/ubBac8yn5lFC8AoAELwSUG0
+      WHgXiKzGAJDVGACyGgNAVmMAyGoMAFmNASCrMQBkNQaArGbeBt1vIx134csICrmlSe2LaCoM
+      26Audspl9As5qCBALpNiG1RvmG1Qzdk5b4O2EXNd9IIeoFw+G1R/mG1QTXPfBn0twx+CocXB
+      NihZjXeByGoMAFmNASCrMQBkNQaArMYAkNX+D+CUzvLEZEMvAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Stats by Type' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAZTklEQVR4nO3daXBb533v8e/BDoLgIhIkQXGRREqULGux1sq7c73GcsauncR2fK+TpvVt
+      MnObN22n64ynTdPbuUube9t7k8a5SSfuOLZjx5ZoS9ZqybK1Uju1i6JIcQVBgiBIbGe5L2ht
+      NkCREgCKPP/PjGdk4OHzPOcAPxwcnOd5jmIYhoEQJmWZ7A4IMZkkAMLUJADC1CQAwtRsX3zA
+      0Eb42z//S57+3l+yeHZpxhtMDAf5vz/9BSgW7n70GYr0AJ6qxVQWu64rd+HkQayl86jx5X+p
+      jm3v/zvHOyIkhod4+sXfo37mjOuebznRROPGrfQMxlmyfA3f+NrDGd8OMT1YX3311VevfaD1
+      8E7i3kpOnmplyewCtuw5Q111EY0bdqCFL/HW+x8QHAZ3rIfPDh7nkwMnCLUdZ+OmLQxqbvxe
+      +MlPX6P5+FG8FXWc3reFxg2bSDqLqa4oofXIp7RpZXz/91/CX5LHT//H33PobAeV1bPZ/N7r
+      bPt4FwX+2az7tx+zt/kiFZV+PvzNG+xtOkRtwxLyHBb2f7yRh1/8AXPcIQ62D3Pq8AHuWDCf
+      DxobqWtooMRXyR1VXk4FnXz3G4/wzrvrrjxvxIK807iZHR/vpGHRMvZtXceHm7ZgKfBTWVo4
+      SS+DmCxf+Apk8PEnB5h7x2K6W4/jKKzg2P6dXDy6B9VTyjvrPmL1ylXs2r6BwUAne5s7+I9f
+      X8vc+Xfi91eyddMGtrz/Fg89+3ssqi2md3CID7d8ysrVq9j8wfsAzFn+IJVKD3/xZ3/BkfO9
+      rFx5F08+9xJ1VaXcuWgJ5UV2Nm7by4qVq3j86eeZW+bkxIVelq25nxKPdbSXhs7bv/pX/m3d
+      LpYtnEu87wJnL3VwvqMf6xc2ULHYiAUucO7SJVo6BujvamfByof53QcXsuHjHWzZeYhVK5ez
+      Yf37Odjd4nZzXQAMQ+NiTz+tzYdwqRHOBOLUzHDw9sfHeHDNYhRDxbA6eOqppwBYuXo1VsXg
+      9bfe5YmvPo7bruDJz+PMqZOcb20DLGhqErvDzVNPPgHAYH+Qux97lj/93vNs37kfm81GLBol
+      3neODQfaefyhe9B17fPHYxh2L3/yx39Ey54N7GruAEBRLDzzwnf43otPsHH7Xp5c+zg//uHf
+      sOL+R1JsosKTax/jn/7ub1nxwNWvQn19QQq8hahqAofby9onUv2tmO6u+wqkjfTjrmjg0a/c
+      x53z5xAeUVncMItg3M6KhfXMm1PNrs/2oNvymF8/C09RCTMKPMRD3exvbmXBggU89MjjBNvP
+      EQx0U1a/jDULZ7J7/yFcBT7m1PhRY0O8+5u3OXGxnxe++TS11dVsbnyP8vq7GLx4lK6wSkND
+      A8uWLmL7hvcoKPWzY8tHxGyFfOW+38Fps2AYOju2beZSSOUbz3yVwpIyDuw/xAtffwqLcs3G
+      uTxU+0txeUs4sP8Qz3/9KTrPH2fTzr1Y8/08/cSDzCxxs6/pKN4SP7UzyyfhJRCTScn0leCO
+      lmY2bNuNZnHznW9/C0cOfmfatfl99KJ67l+5MM3z76EXz+X+FQs5eWAHaskdLJrty37HxG0v
+      4wEQYiqR6wDC1CQAwtQkAMLUJADC1K4PgGFw5MBuInE9I5VHBnrZs2cPe/bsoac/fLUZXSMW
+      T15XNhHu4WRrNwCDfV1s376dnv4wsVjsS/XGYjG+dOZuGJw8epB9+w8SU1P3X08MX+lPS3v3
+      LW2bmB6uuw5gJMO89frrDFhKcavD5BUX0XbhAkY8zPoN26iaXUdPZzvnzp0nNtjL1k/2Uj27
+      nu6WZnbtPYy3qJT204fYe7yVuXW1YBhcat7LpXghd9TNZPe2D2nvT6D1nuBffr2JhoY69n+8
+      mYvBKBWuKHtbhlgwq5xf/vwX3PfAA8TiUX7y4/+F4i7EzQgffrSNkopKXvvH/8aII598omza
+      tovyqlrcDgtvvvUuDXV+Pty+nwLrCJ8cOEndnJm0nW+ltasXv6+URKSLrXtaWDZ/JsFhFWIh
+      Av0hDh/cz4XuQWr9M/jog3VELR7KS2RoxHR33RHgxL6d3PHI83SdOkCk+wRNpy+xc9c+3vz1
+      b5hTXcS767by9q9+jjV/BlhsOGI9NH78GY2bdrN6bhEHT5xi3aa9DF88yNG2QZx5+fjLfPgq
+      ZtJ/di/x4gUET+/BPmMmdQsWU1bswZ1fwLZ33yVyTT/uXrWYt379Jn1hleq6On5n+WI0XaE4
+      38Y7722ielYda1bexdbNmymrrMJuHb36NdjXwe59Bykr9/Fe41asgy18euQEr/3sDXw+H4rN
+      QU31TIpnlFJW7mPTBx+wbcsWhnrOE3VXETi5m00frSdsK2VD43u5fB3EJLkmAAZNpzvJV0NE
+      BvuZteIBdvz7j6ldsgabxSCmu1m2uJ7y2Qu4q2EWGzdvZ/68OjQNktEB9h48hmKxoCaiVM+/
+      C5/n+lE5dqeTgb5eItEEDpeT/u5Oes4e5kRvgsoZhWhXu4GquHjssYc4cmA/dj1JW3eAjRs3
+      Mqt+Pk6bhl1RudjZy31feQyt9yQfHzwLQHlNA9/9g+/x5EOr0dQ4JbULqCnNY9Gy1VSVl1y/
+      4TY3FR6VgJZPvl1hOByifyhOQZ6TSHiIlStWZnG3i9vF1QthhkFndzeVfj+hvm7sBWV0njtJ
+      7fyF6CMhjjSfpq5hIWp8mIryci5dOEMkqVBcUkbvxVOcaz5M2bK11BcmuNgTYunSJTisFqLh
+      AWKKm6J8J6eONWHxVjBv1kxOHz9MaXU9bWeaKSzxU1VVQjgKviIPXe0XaOsaYPHSpejREGfa
+      eqkt89IWiOD3FVOQ56C5pZNan5eWS70sXbYMp1Whq7sbv98PQLC7nfPtvdy5eCGRwRHKykaH
+      TOtqjN7+Ecp9hXz6wdvY596PP3aWbWdGeOie5dT4Szlx9BC2fB8NdTWT9sKI3Lj1K8GGwaXW
+      c0Q0O/PrZ2WmVzlg6CrnWtqYWz+HWCREDBdF+a4b/6GYVmQohDA1uQ4gTE0CIExNAiBMTQIg
+      TE0CIExNAiBMLSMB0DTtxoWEuA3JEUCYmgRAmJoEQJiaBECY2pcWx82E+Gf/TGLvTzJfscWK
+      9wdHMl+vMC05AghTkwAIUxv3VyBDj3PxYg8lpcUMDo1QkGcjplkoKynOZv+EyKpxB0AbCROO
+      JdD6B/FaDIIjKjZNRy8uRNd1rp1WoOuZWVUiFVVVs1a3MJ/xnwTbPRS6B0lqGqGkjsdlI2ko
+      WCwWDMPAar06B1izZO+blc2WlfN2YVLjfjfZnHnUzqrPZl9u2b5PtjPY35/xekvKylm25t6M
+      1ysmn5wEC1OTAAhTkwAIU5MACFOTAAhTk98Ub5GeVDnxZ/+albrL167B99BdWalbjJIATFGG
+      rpLo+TArdVsLFmLz1GWl7tuNBGCqMlTi3euyUrXT6kobgJEDB+j77/8zK+1W/MPf46itTfnc
+      hfPn2LJhQ8bblACIKWE4MsyF8+cyXq+cBAtTkwAIU5MACFOTAAhTkwAIU5MACFOTAAhTG/+c
+      YMPg8P4DlNfOJDwwjMdjJ64q1M9OfeFCiKlg3AGIBLsYHI5hH4xS6nYyolhwWHV0Xb995gRn
+      6W5nhmGkbdfI4sLAhq6n3149e+3qY7Sra9l7bTVtjHaz9J4adwC8pZWsWTMDi2IQDEcpd9lI
+      6LfZnGAlO20qipK2XT2LtxhULJa07Rpa9hYHsIzRrsWavdfWah2j3Sy9pyY0FMLpGr2NaIXP
+      DYAn8/0RIqfkJFiYmgRAmFrKAHR2dua6H0JMipQBaGxslBAIU0j7FaixsZGmpqZc9kWInEv5
+      K9DatWtz3Q8hJkXKAJT7SglHhgEFHTlTFtNXyvd2Mh7lxNFDbNy4nWSueyREDqUMgCu/EEee
+      GzUUIC63ABbTWMoAGIZGMqFT3zAvW6MLhLgtpP16r0bDBJLgtaYrIcTUlzIAimLFYnfijIYZ
+      lBuyiGks5a9AidAlKuevoMLrIE9WDhLTWMojgJ4YYd++Axw92iy/AolpLeXnu6tsHmu/MhOb
+      AYpB1sbZCzHZUgbAMBK8/847+Hx+7n30EWxW0JJxerq70Kxu4vEYhXkOYqpC9cyKXPdZiIxJ
+      GQBFcbBkSQOnTnRxeSKOxeZAjQ0T1g3K3TbCmo5D12RKpEyJzJjbakqk21tKsaebpA4uK6jx
+      EXB68Dk9DCeTFNltJGwOmRIpUyIz5raZEmkYCfbs+hSfz8/lt7Xd5aGmRiZBiuklZazi/R3c
+      sWQpfaGRXPdHiJxKGQB7fgmBwCD33b0UmwwFFdNYyre31VnAgrpyevtCue6PEDmV9vM9NDDA
+      yePHULN30i/EpEsbAHt+Afk2g2QWf+UQYrKlDUCkp40B1Y1LxgKJaSxtAAr9s/E5NRIyIUZM
+      Yyk/37XhAMePnwRXMU6ZDyCmsZRHAC0eJRaNoyYSJHLdIyFyKOURwDGjhhdeqMl1X4TIubTn
+      AJqm0n7uPPFc9kaIHEv7G8+ObZvpDgxQ2d3Lg/euyWWfhMiZtEcAX1EelrxSli+5M5f9ESKn
+      0v8MWlJBsdPA6vbmsj9C5FTqleGiYTp7+xmOJhhr+L0QU13at7dFsaAoypU5JloiRncgiNfr
+      JRyJUpBnI6ZZKCspzlFXhci8lAGwuwtYtXr1dY9Z7E6sJOjsHWCG00JwRMWm6ejFhTIlMktk
+      SuT1fcqGcX/BiYcDdA/EKS3yEIqpeFw2kobcJVKmRGbObTMlMhVXYRlLC8uy0gkhJovM9xKm
+      JgEQpiYBEKYmARCmJgEQpiYBEKYmARCmJgEQpiYBEKYmARCmJgEQpiYBEKYmARCmJgEQpiYB
+      EKY2oQAkEgkMXaV/YJBkfITwcCxb/RIiJ8Y9IUZXE5y/0Eahx4muGYQiCjZDJ99dLVMis0Sm
+      RF7fp2yYwJoPBmoiSsKuEI2pONw2YhoyJVKmRGbMbT0l0mJzsmjRIgzDwDAMFEXJ1geuEDkz
+      4VV/FEVBUUY/arP0gStEzsivQMLUJADC1CQAwtQkAMLUJADC1CQAwtQkAMLUJADC1CQAwtQk
+      AMLUJADC1CQAwtQkAMLUbjoAHe2tnLtwMZN9ESLnbjoAhmLDYZUB0WJqu+m7ABcXFpDQJQBi
+      alOMayfz3gRd19E07bopa3q4AyPcecud+zIFa9WKK/93eWbaZUODIdRkMuOt2h0O8gsKU7dr
+      GAy3dGW8TQBHSQH2ovw07epow2ez0q7iLMNiv3r/52vb1YeGSLZfykq7jjmzUVyuL7UJMByJ
+      0NvdnfE2bzkAMBqCbM3ZlHYnt93Lb49r34y5kKttzUgL4++ogRoJEBwxrhw5DMNA0zR0LYmq
+      6ajJJNo4Z5pPbAeNthMOh9E0fXSJF0MnmVTpmeAny7jaNQySyQT659t3eS61rmkEg0GSSZVo
+      NIqua4z3I2i822sYBpfaL9LV3XulzVgsRiKZvLK/x+vaKbDj1R/oJhDoI6GOvs6JRGJCfw8T
+      nwRvGAaBQABd16/81xcMcqPP95s+B7gZQ309DA4N0B2NoJc66WxtRfdW4LYbuKwKuqGgqnHc
+      ngKqZ1ZmtG1D1zh57Ag4CyjNC9A7FEUzrLhdDtwO640rmHCDGhdaW7HpSQbiNspm5KFrcdSk
+      DcNQGQxHsJBE06G6ZhYOe2ZfiqGhCB6vlY5L7WiqhhYNErMXoSUVHA6Fhvo5GW3vWgOhMPkO
+      G+fCQxRYkvQNJ5k1ay5F+Y6stdnV0U44qpKIRugbHMJqcWBXEiR0K5W+orR/l9MAuD35DERG
+      mFlRyow8hWiZH83ioK8viK+mAh0rLpeDrEy3VxRKy8qw2twoFoMCHOTnuVANBZcjO7tBTSaY
+      Ue7HMRLDaVExvH4Sg33kFZThsCqomspwZCjjS6soikJVdQ0KEAkF8JT6IebC5ikk1NdPT/9A
+      Zhv8grKKSpxWA2sSivPsaF0B8lzZfavlezwk9BgOp4XSEicFBUWgJ0lqY+/cjJwD3ApD10io
+      Ok6HfTK7kXmGgWYYWD8/lCeTSez23G/jF9vVdY3kdNzfN2nSAyDEZJKhEMLUJADC1CQAwtQk
+      AMLUrguAYej87x/+OcfbQhmp3NB11jeuA0Pn/fWNX3r+/OFd/MvPfslPfvYrkmlOxY8d+JT/
+      +qMf8cZb7zKSvQWRhUld9+NsuOMEVXc9xMHduxg8oTLn3rXs3rSeQqdBZ1+QWYseoP3IVkbs
+      PlY2VHDo0GEW3PMULfs2oFhtVN55HxcPbiMc0/jmd/6QErfCqeOHqazwc66tk90f/ZYLYZWh
+      EZ3//PI3iQ4NsPy+J+j47G0OHdzHkSOn8RaXkqcMMxDo5WsvfZ9FK+7h8OFTPPONZ9j227e4
+      96tPs/XDjURDPWAxKJmzkmjnMYIDQ9z95PMsqC6ZrH0ppqDrjgC7Pt1DNJagpeU0ixfPY8fG
+      9SRtRTQ3n6S4pJxYeIBwwsp3v/UsXV29VJUXc7b1LFG9gEfvXcJQqIvTrSF8xV76B4cBsFqt
+      OBxOLAoMD0X4D089h12PjDZowKb1b+OtX0nvyUPklxSjqwkG+0M89/IfUuy+tncKyxfN4de/
+      +H94qxZg2PJ4/qWX6Tx3hJNnzlJW5mNgILsXeMT0czUAhoHireTFZ9fy2Mr5xIsbCF04xpr7
+      7mbVqmXEExqlZaXMmTMHBRgZHiJu2CkvqaC63MmGrZ+huMpYuqACh6eIwjw7KArzFy5l0aI7
+      qZ9VjWEk+fC3b1NcUQeAp6iE5775LR69fzWr7rufeHiIUp+P8upZeBxXu1bu92MByuqW0XWp
+      jXuX1RPqbeeN119n6T0Ps3zJYlSLA19xQY53n5jqbvlCmGEYbNu4jrauIF999kXKC11pyzbt
+      2MScNY9SfJNDQlpPH+Zsd4JHHljJlk1befjRh2+y10KMkivBwtTkZ1BhahIAYWoSAGFqEoAp
+      ZDgU4Be//CWnzrcRCg1w/sxJAsEgR5tPyx07b5IEYArxFPmY1zCffDXI5s8O0dXZxUe/eZNA
+      sIdQbLJ7NzXJr0BTzOBgGC0aomNQJXDxFKvufYCWcy0suHMRdvk4m7ApvSqEELdqwu9aQ0sy
+      EAqTjI8QHh497spBRExVE56p3N3VQXdwmJIZBWDo5Lur0XVdQiCmpAkHQFV1XFaFuJrA0EbX
+      bzEMA4tFIfJPi9P+nbV6NXnP/fyWOitEpk04AFW1s68sW3ezn/n9wSChgf60z1fOrMLldqd9
+      XohMmXAArl0p7GZX72nau4ftmzelff6V//IDZs3J3sJNQlyW04WxJsqIxtF70s9OU4rysRR5
+      ctgjMd3c5gFIoLf2pn3eMluBzwPQ+H/+jt6L51KXs1r59o9eA6B/zwkGD55JW6f/d+/HVTGD
+      9osX2bh+Xdpyq9bczZLlywEIDidJplneTQHKvdlbElDcmts6ANmQCIYZPp9+6XY9NrqQa3Rk
+      hAvnUwcKYN6CBVf+vactTN9w6gnLVgVeWl4OwM6uj9gf+DRtnd+qf4WKvCp03aC5NZC2nDfP
+      wayK9OtdivEzXQCmgoSq8VevbUv7/IqGSv765fsxdJ34qVNpy1ny83HU1GSji9OGBGAKMxIJ
+      ev/mh2mfdy+7C9+f/gkAicB2kqEDacu6qv8TVlc5iXicyFA4bbk8jweXO+/mO32bkQCYhB7v
+      RYucHqPA6FX9UH+QI/t2py02787F1NbNBeDYjlcZCbelLGe157Hi8X8GoOdMBwPtfWnrnLVq
+      Hi6vm3BskEuh9rTlKrx+Zngyu+qHBEDctMG+ZoaCqUNlc3iv/Lv3TActu9N/VfPfUY3L6+Z0
+      zwn+ccc/pC338srf57EFa2++w6n6mdHahMiR77/9Bq39qS+mep0u3vz2d8dVz4QDEOztYkS1
+      YNGiRFWF+tm1E61CiNwZCUI8/TnNhAMwFA4Ti2rYiwtwWK/ej8nQx/47wzBQ1dGfCvUbDJzT
+      dW20rD52pbquY3xe540G46lXyo1dp6brqKqKPo62r9Y5ZtGr232DW8Fo2midN7qH1+V9aajj
+      Kwc33ueapmFMcLtvNBZm3G1/XqeWsX1+dbst7Z9h6dyftmTKADQ1NbH884s8X1RTW0t3cIhC
+      j5OErlw3GG4siqJgs402Z7nBTdcsFis2mw3dYmGsl9hisWD9vM4b3cjNdqXc2CPArRYLNpvt
+      hvMbLJ+XG61zzKJXt/sG+8hqHa1TvcGHyeV9qdvGXiz12n2u3qCTVqsV6wS3+0ZjYcb7el/e
+      59aM7XPlmj7e4H2R6sGmpiaAlCGw2F1UVowufiWDEMRUlzZyTU1NrF+/Ppd9ESLnUh4BXnnl
+      lVz3Q4hJkfYIcKb5CDt27kaViV5iGksbgKFIhPhggJMXLuWyP0LkVMoAaLEh+oNBDE8Z8+dU
+      5bpPQuRM2iNANNRDJJHLrgiReylPgq0uL1978Q9y3Rchci7tEUDTVNrPnSeey94IkWNph0Ls
+      +ewTAuE4VaF+VqxYeeVxQ41z4MgpKssKZSyQmPLSBqBmpp/8GVYW31F/3eOX2ttJxIZJGCUy
+      FkjGAo3pthgLZBhjLn+YNgAGCt1tLcxtmEveNaWqZ9fj81ehJRMyFkjGAo1pyo4FSkbDdPb2
+      MxxNYEtRwuVygcslY4HElJc2chbFMroIVi57I0SOpTwC2N0FrFq9Otd9ESLnZFF/YWoSAGFq
+      /x83sEZbjHEVgAAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
