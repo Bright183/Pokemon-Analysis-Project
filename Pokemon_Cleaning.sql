@@ -289,12 +289,3 @@ CHANGE speed speed INT AFTER sp_defense;
 
 
 
-
-
-
-
-
-
-
-
-
