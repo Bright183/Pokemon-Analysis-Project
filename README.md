@@ -1,9 +1,10 @@
 **Pokémon Data Analysis Project**
 
-- Only includes the Pokémon from the first 7 Generations (Not including megas, ultra beasts, and different forms)
+Tableau Public Link: https://public.tableau.com/views/pokemon_visualization/StatsbyPrimaryType?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon
+Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon  
 
+NOTE: Only includes the Pokémon from the first 7 Generations (Not including megas, ultra beasts, and different forms) 
 
 **Project Process**
 
