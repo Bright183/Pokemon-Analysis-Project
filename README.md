@@ -19,6 +19,8 @@ Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon
    e. Reordered Columns (Better readability)  
 
 3. Data Exploratory Analysis and Visualization in Tableau
-   a. Created a Dashboard that shows all the average stats for each type
-		- Dragon type has the highest stats based on total stats, but Dragon is always in the top 3 in every other stat
+   a. Created a Dashboard that shows all the average stats for each type  
+		- Dragon type has the highest stats based on total stats, but Dragon is also always in the top 3 in every other individual stat  
 		- Bug is the lowest total stat and seems to be at the bottom of most graphs
+
+   ![](images/type_stat_distribution.png)
