@@ -23,7 +23,7 @@
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Pokemon_Data_Analysis_Viz' path='/workbooks' revision='1.5' />
+  <repository-location id='Pokemon_Data_Analysis_Viz' path='/workbooks' revision='1.8' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -42,8 +42,8 @@
           <member value='&quot;Speed&quot;' />
         </members>
       </column>
-      <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-        <calculation class='tableau' formula='&quot;ghost&quot;' />
+      <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+        <calculation class='tableau' formula='&quot;dragon&quot;' />
         <aliases>
           <alias key='&quot;bug&quot;' value='Bug' />
           <alias key='&quot;dark&quot;' value='Dark' />
@@ -117,8 +117,8 @@
           <member alias='Gen: 7' value='7' />
         </members>
       </column>
-      <column alias='Off' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='false'>
-        <calculation class='tableau' formula='false' />
+      <column alias='On' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='true'>
+        <calculation class='tableau' formula='true' />
         <aliases>
           <alias key='false' value='Off' />
           <alias key='true' value='On' />
@@ -641,7 +641,7 @@
       </connection>
       <aliases enabled='yes' />
       <column caption='Dynamic Type Title' datatype='string' name='[Calculation_-8149826464322539510]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [Parameters].[Parameter 5] = TRUE THEN&#13;&#10;    &quot;Number of &quot; + [Parameters].[Parameter 2] + &quot; Type Pokemon by Generation &quot;&#13;&#10;ELSE&#13;&#10;    &quot;Number of Pokémon by Generation&quot;&#13;&#10;END' />
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 5] = TRUE THEN&#13;&#10;    &quot;Number of &quot; + &#13;&#10;    CASE [Parameters].[Parameter 2] &#13;&#10;        WHEN &apos;water&apos; THEN &apos;Water&apos;&#13;&#10;        WHEN &apos;dragon&apos; THEN &apos;Dragon&apos;&#13;&#10;        WHEN &apos;poison&apos; THEN &apos;Poison&apos;&#13;&#10;        WHEN &apos;ground&apos; THEN &apos;Ground&apos;&#13;&#10;        WHEN &apos;fighting&apos; THEN &apos;Fighting&apos;&#13;&#10;        WHEN &apos;fire&apos; THEN &apos;Fire&apos;&#13;&#10;        WHEN &apos;steel&apos; THEN &apos;Steel&apos;&#13;&#10;        WHEN &apos;ghost&apos; THEN &apos;Ghost&apos;&#13;&#10;        WHEN &apos;normal&apos; THEN &apos;Normal&apos;&#13;&#10;        WHEN &apos;psychic&apos; THEN &apos;Psychic&apos;&#13;&#10;        WHEN &apos;grass&apos; THEN &apos;Grass&apos;&#13;&#10;        WHEN &apos;fairy&apos; THEN &apos;Fairy&apos;&#13;&#10;        WHEN &apos;dark&apos; THEN &apos;Dark&apos;&#13;&#10;        WHEN &apos;bug&apos; THEN &apos;Bug&apos;&#13;&#10;        WHEN &apos;rock&apos; THEN &apos;Rock&apos;&#13;&#10;        WHEN &apos;electric&apos; THEN &apos;Electric&apos;&#13;&#10;        WHEN &apos;flying&apos; THEN &apos;Flying&apos;&#13;&#10;        WHEN &apos;ice&apos; THEN &apos;Ice&apos;&#13;&#10;        End&#13;&#10;    + &quot; Primary Type Pokemon by Generation &quot;&#13;&#10;ELSE&#13;&#10;    &quot;Number of Pokémon by Generation&quot;&#13;&#10;END' />
       </column>
       <column caption='On/Off Generation Filter' datatype='boolean' name='[Calculation_-8149826464332054519]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='IF[Parameters].[Parameter 3] THEN &#13;&#10;[generation] = [Parameters].[Parameter 4]&#13;&#10;ELSE TRUE&#13;&#10;END' />
@@ -723,6 +723,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>801</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>name</remote-name>
@@ -737,6 +738,7 @@
               <approx-count>801</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>type1</remote-name>
@@ -751,6 +753,7 @@
               <approx-count>18</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>type2</remote-name>
@@ -765,6 +768,7 @@
               <approx-count>19</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>generation</remote-name>
@@ -778,6 +782,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>7</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>percentage_male</remote-name>
@@ -791,6 +796,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>7</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>capture_rate</remote-name>
@@ -804,6 +810,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>34</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>is_legendary</remote-name>
@@ -817,6 +824,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>2</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>height_m</remote-name>
@@ -830,6 +838,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>51</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>weight_kg</remote-name>
@@ -843,6 +852,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>422</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>base_total</remote-name>
@@ -856,6 +866,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>203</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>hp</remote-name>
@@ -869,6 +880,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>99</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>attack</remote-name>
@@ -882,6 +894,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>114</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>sp_attack</remote-name>
@@ -895,6 +908,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>111</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>defense</remote-name>
@@ -908,6 +922,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>109</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>sp_defense</remote-name>
@@ -921,6 +936,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>97</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>speed</remote-name>
@@ -934,6 +950,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>113</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>abilities</remote-name>
@@ -948,6 +965,7 @@
               <approx-count>482</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_bug</remote-name>
@@ -961,6 +979,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_dark</remote-name>
@@ -974,6 +993,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_dragon</remote-name>
@@ -987,6 +1007,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_electric</remote-name>
@@ -1000,6 +1021,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>6</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_fairy</remote-name>
@@ -1013,6 +1035,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_fight</remote-name>
@@ -1026,6 +1049,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>6</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_fire</remote-name>
@@ -1039,6 +1063,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_flying</remote-name>
@@ -1052,6 +1077,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_ghost</remote-name>
@@ -1065,6 +1091,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_grass</remote-name>
@@ -1078,6 +1105,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_ground</remote-name>
@@ -1091,6 +1119,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>6</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_ice</remote-name>
@@ -1104,6 +1133,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_normal</remote-name>
@@ -1117,6 +1147,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_poison</remote-name>
@@ -1130,6 +1161,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>6</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_psychic</remote-name>
@@ -1143,6 +1175,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>6</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_rock</remote-name>
@@ -1156,6 +1189,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_steel</remote-name>
@@ -1169,6 +1203,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>against_water</remote-name>
@@ -1182,6 +1217,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <object-id>[pokemon_cleaned_data.csv_15AA647B64414B2393EB3F74B679A768]</object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -1330,8 +1366,8 @@
         <column caption='Selected Stat' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Hp&quot;'>
           <calculation class='tableau' formula='&quot;Hp&quot;' />
         </column>
-        <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-          <calculation class='tableau' formula='&quot;ghost&quot;' />
+        <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+          <calculation class='tableau' formula='&quot;dragon&quot;' />
           <aliases>
             <alias key='&quot;bug&quot;' value='Bug' />
             <alias key='&quot;dark&quot;' value='Dark' />
@@ -1372,8 +1408,8 @@
             <alias key='7' value='Gen: 7' />
           </aliases>
         </column>
-        <column alias='Off' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='false'>
-          <calculation class='tableau' formula='false' />
+        <column alias='On' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='true'>
+          <calculation class='tableau' formula='true' />
           <aliases>
             <alias key='false' value='Off' />
             <alias key='true' value='On' />
@@ -2364,8 +2400,8 @@
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-          <calculation class='tableau' formula='&quot;ghost&quot;' />
+        <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+          <calculation class='tableau' formula='&quot;dragon&quot;' />
           <aliases>
             <alias key='&quot;bug&quot;' value='Bug' />
             <alias key='&quot;dark&quot;' value='Dark' />
@@ -2465,8 +2501,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-              <calculation class='tableau' formula='&quot;ghost&quot;' />
+            <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+              <calculation class='tableau' formula='&quot;dragon&quot;' />
               <aliases>
                 <alias key='&quot;bug&quot;' value='Bug' />
                 <alias key='&quot;dark&quot;' value='Dark' />
@@ -2488,8 +2524,8 @@
                 <alias key='&quot;water&quot;' value='Water' />
               </aliases>
             </column>
-            <column alias='Off' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='false'>
-              <calculation class='tableau' formula='false' />
+            <column alias='On' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='true'>
+              <calculation class='tableau' formula='true' />
               <aliases>
                 <alias key='false' value='Off' />
                 <alias key='true' value='On' />
@@ -2498,7 +2534,7 @@
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.1cg2umh12hh81b18jjhoe0xsajnv'>
             <column caption='Dynamic Type Title' datatype='string' name='[Calculation_-8149826464322539510]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='IF [Parameters].[Parameter 5] = TRUE THEN&#13;&#10;    &quot;Number of &quot; + [Parameters].[Parameter 2] + &quot; Type Pokemon by Generation &quot;&#13;&#10;ELSE&#13;&#10;    &quot;Number of Pokémon by Generation&quot;&#13;&#10;END' />
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 5] = TRUE THEN&#13;&#10;    &quot;Number of &quot; + &#13;&#10;    CASE [Parameters].[Parameter 2] &#13;&#10;        WHEN &apos;water&apos; THEN &apos;Water&apos;&#13;&#10;        WHEN &apos;dragon&apos; THEN &apos;Dragon&apos;&#13;&#10;        WHEN &apos;poison&apos; THEN &apos;Poison&apos;&#13;&#10;        WHEN &apos;ground&apos; THEN &apos;Ground&apos;&#13;&#10;        WHEN &apos;fighting&apos; THEN &apos;Fighting&apos;&#13;&#10;        WHEN &apos;fire&apos; THEN &apos;Fire&apos;&#13;&#10;        WHEN &apos;steel&apos; THEN &apos;Steel&apos;&#13;&#10;        WHEN &apos;ghost&apos; THEN &apos;Ghost&apos;&#13;&#10;        WHEN &apos;normal&apos; THEN &apos;Normal&apos;&#13;&#10;        WHEN &apos;psychic&apos; THEN &apos;Psychic&apos;&#13;&#10;        WHEN &apos;grass&apos; THEN &apos;Grass&apos;&#13;&#10;        WHEN &apos;fairy&apos; THEN &apos;Fairy&apos;&#13;&#10;        WHEN &apos;dark&apos; THEN &apos;Dark&apos;&#13;&#10;        WHEN &apos;bug&apos; THEN &apos;Bug&apos;&#13;&#10;        WHEN &apos;rock&apos; THEN &apos;Rock&apos;&#13;&#10;        WHEN &apos;electric&apos; THEN &apos;Electric&apos;&#13;&#10;        WHEN &apos;flying&apos; THEN &apos;Flying&apos;&#13;&#10;        WHEN &apos;ice&apos; THEN &apos;Ice&apos;&#13;&#10;        End&#13;&#10;    + &quot; Primary Type Pokemon by Generation &quot;&#13;&#10;ELSE&#13;&#10;    &quot;Number of Pokémon by Generation&quot;&#13;&#10;END' />
             </column>
             <column caption='On/Off Type Filter' datatype='boolean' name='[Calculation_-8149826464348639232]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='IF[Parameters].[Parameter 5] THEN &#13;&#10;[type1] = [Parameters].[Parameter 2]&#13;&#10;ELSE TRUE&#13;&#10;END' />
@@ -2632,7 +2668,7 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true'>Number of Pokemon in each Type by Generation</run>
+            <run bold='true'>Number of Pokemon by Type in each Generation</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -2694,9 +2730,9 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true'>Average &lt;</run>
-            <run bold='true'>[Parameters].[Parameter 1]</run>
-            <run bold='true'>&gt; by Type</run>
+            <run bold='true' fontcolor='#000000'>Average &lt;</run>
+            <run bold='true' fontcolor='#000000'>[Parameters].[Parameter 1]</run>
+            <run bold='true' fontcolor='#000000'>&gt; by Type</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -2800,7 +2836,9 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true'>Stat Distribution by Type</run>
+            <run bold='true' fontcolor='#000000'>Average Stat Distribution by &lt;</run>
+            <run bold='true' fontcolor='#000000'>[Parameters].[Parameter 2]</run>
+            <run bold='true' fontcolor='#000000'>&gt; Type</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -2811,8 +2849,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-              <calculation class='tableau' formula='&quot;ghost&quot;' />
+            <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+              <calculation class='tableau' formula='&quot;dragon&quot;' />
               <aliases>
                 <alias key='&quot;bug&quot;' value='Bug' />
                 <alias key='&quot;dark&quot;' value='Dark' />
@@ -3180,8 +3218,8 @@
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-          <calculation class='tableau' formula='&quot;ghost&quot;' />
+        <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+          <calculation class='tableau' formula='&quot;dragon&quot;' />
           <aliases>
             <alias key='&quot;bug&quot;' value='Bug' />
             <alias key='&quot;dark&quot;' value='Dark' />
@@ -3255,8 +3293,8 @@
             <member alias='Gen: 7' value='7' />
           </members>
         </column>
-        <column alias='Off' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='false'>
-          <calculation class='tableau' formula='false' />
+        <column alias='On' caption='Enable Type Filter' datatype='boolean' name='[Parameter 5]' param-domain-type='list' role='measure' type='nominal' value='true'>
+          <calculation class='tableau' formula='true' />
           <aliases>
             <alias key='false' value='Off' />
             <alias key='true' value='On' />
@@ -3391,8 +3429,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1350' minheight='1350' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='43' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98684' id='42' param='vert' type-v2='layout-flow' w='99318' x='341' y='658'>
+            <zone h='100000' id='53' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='52' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='98684' id='15' is-fixed='true' name='Pokemon-type by Gen' w='43746' x='341' y='658'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3533,8 +3571,8 @@
             <member value='&quot;Speed&quot;' />
           </members>
         </column>
-        <column alias='Ghost' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;ghost&quot;'>
-          <calculation class='tableau' formula='&quot;ghost&quot;' />
+        <column alias='Dragon' caption='Selected Type' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;dragon&quot;'>
+          <calculation class='tableau' formula='&quot;dragon&quot;' />
           <aliases>
             <alias key='&quot;bug&quot;' value='Bug' />
             <alias key='&quot;dark&quot;' value='Dark' />
@@ -3590,8 +3628,8 @@
             </zone>
             <zone h='94654' id='16' param='vert' type-v2='layout-flow' w='99318' x='341' y='4688'>
               <zone h='94654' id='7' param='horz' type-v2='layout-flow' w='99318' x='341' y='4688'>
-                <zone h='94654' id='5' type-v2='layout-basic' w='94546' x='341' y='4688'>
-                  <zone h='42598' id='3' name='Total Stats' w='94546' x='341' y='4688'>
+                <zone h='94654' id='5' type-v2='layout-basic' w='94550' x='341' y='4688'>
+                  <zone h='42598' id='3' name='Total Stats' w='94550' x='341' y='4688'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='solid' />
@@ -3599,7 +3637,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='47367' id='22' name='Selected Individual Stats' w='55390' x='341' y='47286'>
+                  <zone h='47367' id='22' name='Selected Individual Stats' w='55392' x='341' y='47286'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='solid' />
@@ -3607,7 +3645,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='4689' id='24' type-v2='text' w='94546' x='341' y='94653'>
+                  <zone h='4689' id='24' type-v2='text' w='94550' x='341' y='94653'>
                     <formatted-text>
                       <run bold='true' fontcolor='#000000'>Note:</run>
                       <run bold='true'> &#10;- </run>
@@ -3622,7 +3660,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone custom-title='true' fixed-size='48' h='47367' id='23' is-fixed='true' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='3964' x='55731' y='47286'>
+                  <zone custom-title='true' fixed-size='48' h='47367' id='23' is-fixed='true' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='3964' x='55733' y='47286'>
                     <formatted-text>
                       <run bold='true'>Selected Stat </run>
                     </formatted-text>
@@ -3633,7 +3671,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='47367' id='41' name='Stat Radar' w='35192' x='59695' y='47286'>
+                  <zone h='47367' id='41' name='Stat Radar' w='35194' x='59697' y='47286'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='solid' />
@@ -3642,9 +3680,9 @@
                     </zone-style>
                   </zone>
                 </zone>
-                <zone fixed-size='112' h='94654' id='33' is-fixed='true' type-v2='layout-basic' w='4772' x='94887' y='4688'>
-                  <zone h='42598' id='6' param='vert' type-v2='layout-flow' w='4772' x='94887' y='4688'>
-                    <zone h='31744' id='8' name='Total Stats' pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type-v2='color' w='4772' x='94887' y='4688'>
+                <zone fixed-size='112' h='94654' id='33' is-fixed='true' type-v2='layout-basic' w='4768' x='94891' y='4688'>
+                  <zone h='42598' id='6' param='vert' type-v2='layout-flow' w='4768' x='94891' y='4688'>
+                    <zone h='31744' id='8' name='Total Stats' pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type-v2='color' w='4768' x='94891' y='4688'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -3652,7 +3690,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='10854' id='32' type-v2='empty' w='4772' x='94887' y='36432'>
+                    <zone h='10854' id='32' type-v2='empty' w='4768' x='94891' y='36432'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -3661,8 +3699,8 @@
                       </zone-style>
                     </zone>
                   </zone>
-                  <zone h='52056' id='34' param='vert' type-v2='layout-flow' w='4772' x='94887' y='47286'>
-                    <zone custom-title='true' h='4276' id='31' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='4772' x='94887' y='47286'>
+                  <zone h='52056' id='34' param='vert' type-v2='layout-flow' w='4768' x='94891' y='47286'>
+                    <zone custom-title='true' h='4276' id='31' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='4768' x='94891' y='47286'>
                       <formatted-text>
                         <run bold='true'>Selected Type</run>
                       </formatted-text>
@@ -3697,8 +3735,8 @@
           </layout-options>
           <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='71' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98684' id='70' param='vert' type-v2='layout-flow' w='99318' x='341' y='658'>
+            <zone h='100000' id='81' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98684' id='80' param='vert' type-v2='layout-flow' w='99318' x='341' y='658'>
                 <zone fixed-size='41' h='4030' id='28' type-v2='title' w='99318' x='341' y='658'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3708,7 +3746,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='42598' id='3' is-fixed='true' name='Total Stats' w='94546' x='341' y='4688'>
+                <zone fixed-size='280' h='42598' id='3' is-fixed='true' name='Total Stats' w='94550' x='341' y='4688'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -3717,7 +3755,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='31744' id='8' name='Total Stats' pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type-v2='color' w='4772' x='94887' y='4688'>
+                <zone h='31744' id='8' name='Total Stats' pane-specification-id='0' param='[federated.1cg2umh12hh81b18jjhoe0xsajnv].[none:type1:nk]' type-v2='color' w='4768' x='94891' y='4688'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -3726,7 +3764,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='47367' id='22' is-fixed='true' name='Selected Individual Stats' w='55390' x='341' y='47286'>
+                <zone fixed-size='280' h='47367' id='22' is-fixed='true' name='Selected Individual Stats' w='55392' x='341' y='47286'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -3735,7 +3773,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone custom-title='true' fixed-size='48' h='47367' id='23' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='3964' x='55731' y='47286'>
+                <zone custom-title='true' fixed-size='48' h='47367' id='23' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='3964' x='55733' y='47286'>
                   <formatted-text>
                     <run bold='true'>Selected Stat </run>
                   </formatted-text>
@@ -3747,7 +3785,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='47367' id='41' is-fixed='true' name='Stat Radar' w='35192' x='59695' y='47286'>
+                <zone fixed-size='280' h='47367' id='41' is-fixed='true' name='Stat Radar' w='35194' x='59697' y='47286'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -3756,7 +3794,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone custom-title='true' h='4276' id='31' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='4772' x='94887' y='47286'>
+                <zone custom-title='true' h='4276' id='31' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='4768' x='94891' y='47286'>
                   <formatted-text>
                     <run bold='true'>Selected Type</run>
                   </formatted-text>
@@ -3768,7 +3806,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='4689' id='24' type-v2='text' w='94546' x='341' y='94653'>
+                <zone h='4689' id='24' type-v2='text' w='94550' x='341' y='94653'>
                   <formatted-text>
                     <run bold='true' fontcolor='#000000'>Note:</run>
                     <run bold='true'> &#10;- </run>
@@ -3799,7 +3837,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='51'>
-    <window class='dashboard' name='Stats by Primary Type'>
+    <window class='dashboard' maximized='true' name='Stats by Primary Type'>
       <viewpoints>
         <viewpoint name='Selected Individual Stats'>
           <zoom type='entire-view' />
@@ -3812,10 +3850,10 @@
           </highlight>
         </viewpoint>
       </viewpoints>
-      <active id='22' />
+      <active id='41' />
       <simple-id uuid='{A62EEE5B-BF26-4454-9D87-4C4C454AB79D}' />
     </window>
-    <window class='dashboard' maximized='true' name='Generation'>
+    <window class='dashboard' name='Generation'>
       <viewpoints>
         <viewpoint name='CNT by Generation'>
           <floating-toolbar-visibility value='1' />
@@ -3830,7 +3868,7 @@
         </viewpoint>
         <viewpoint name='Typing Combination Frequency' />
       </viewpoints>
-      <active id='11' />
+      <active id='-1' />
       <simple-id uuid='{468F1F33-7CBA-4037-830B-AF8F8FED5AA4}' />
     </window>
     <window class='worksheet' name='Sheet 8'>
@@ -4114,105 +4152,104 @@
   <thumbnails>
     <thumbnail height='192' name='Generation' width='192'>
       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
-      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
-      tFY4mfZKY2kAAAAASUVORK5CYII=
+      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
     </thumbnail>
     <thumbnail height='192' name='Sheet 8' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
@@ -4261,110 +4298,110 @@
     </thumbnail>
     <thumbnail height='192' name='Stats by Primary Type' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      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
+      AAAVuElEQVR4nO3deXwU9f3H8dfM7maTbM7NAYRADiBBRFBUQH5WUTzr9ahnrVqs1raK1qNW
+      /Wnr0f7aWqvW2v5aj3r111pbFWzViBwGRECKcsiVECAh5CLk3M3eu/P9/RFFU4jNwu4mZD7P
+      fyDZnc/3u5t578x3dr4zmlJKIYRJ6YPdASEGkwRAmJoEQJiaBECYmgRAmJoEQJiaBECYmgRA
+      mJoEQJiaBECYmgRAmJoEQJiaBECYmgRAmJr1s/8opXjppZcoLi4exO4IkVjWL/5QXFzM7Nmz
+      B6krQiSe7AIJU+sTgM6Gaq6++mrmfedbPL/gvQEXqV62gN+9soh5824FINDdzLVXfYObbriW
+      Z15dclgddLfUsPCDDVEupXjw5it5/s1Vh9X2ZyJhD/fc/G2mTp3KTXc8QOgLjy157TlWfNLw
+      hd8Y3HTLzQCEPPu49qqr+P5N3+HN5Rt57tEHaHTT57kP/OTBA9rztW3nrvufOGhfmrd/xHXf
+      vILjp5/M48++crgvzfT67AK9+dfnuOHRtzllopPrr/sO21e9wz13XMsfF3zMvuo1+CIw9+qv
+      8eNfvcDNN17Px+9Xsm1HE7d961zCkQjBYO+q8cHC+ZxxzZ1cdfYUamsbefbxh6hq7KR06mnU
+      vP8q2c4sNu9TJHubuOnW2/jFEy+Sk+Tne/c8xNLX/szW7bXMu+4yHnvxn1xz4Syq3Nm89/ff
+      kpwznuuvvoCf/OJJdM3K3EvO4KWFa3HXV3PP/fdQ02pw2VkzCXvb8KaVsn7JP6kt6OHt7UD9
+      GiZOPZq3lqwlZ3QpRv1H+DPLOPPk8SxftpqUkZOgdQvdHh+Z42dib9/M3i4PZ1x5M2ccP4GH
+      n3yKru/dzO8ff4iKl//Awo92kD1yHL7tS+hY005wdgnLVn5IzrhZBEPB3jdUGYTCEaafdj6z
+      TxjD3B9X0JF9HMWWJlavXcexs8+j4u0Kphw/ncr5rzKi/DjuvvP7gGLdyqV899q1nHnR19jZ
+      EmK8rZmSOXOZVnYCv3vsIe779Vvc8o053PfgI1x2Sikf1uxj0fKPydC8zLvnR7z89O8JW5L4
+      8c9+SX6aLcGr1ZGjzxYgNTUVl8sFkQBhrMyc4OTuB59i1rFFrNjcSHZmOk17Gply8lf5yuQi
+      DFsSvr0NuIJ9i6akJH9aJ8TmbdtYs7WJR3/1KzasXIifVO678yaco8q5YPYUmvd1Mm7Kydx9
+      wyVULnufkG4j2FlPa6ePU86/gplHj8Hl8XPs5Mm072ticcU7nHbpdznr+JGs2biTKSfN4SuT
+      R6PnH8NlZ80E4MN3F1BV18j6tSuwlMyg6oM3aHLBhvcqsKak4/O46HFr3PXAHfS0tZGV46R2
+      53a6ul0k25P4r5NOZPHy5WRkZtPWsveAN+3dZR/z88ceoXnHBmbOmMHFl15KZ3sbzpwsarfX
+      7H9exLDy00cfpzjDy/2/fJHp06dy6cUX0NblIjvNSkvAztTjjuXic89k8qRxtDbW0eXt/RA5
+      Zvop3H/7XLbuVTRvXcWqmn0cW5LTpx82Ry7J/iZeeGs1p884ionTTufWa87lzdf/wuaGLtJT
+      bLS2u2KyogxXfbYAF829mSV/+w1L/qy4/pYfMLMkiQXrn+KkmbP42qmL8Kpkxk8sp1nrwevu
+      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
+      /T/x4AhU65rYGwAAAABJRU5ErkJggg==
     </thumbnail>
   </thumbnails>
   <_.fcp.VizExtensions.true...referenced-extensions>
