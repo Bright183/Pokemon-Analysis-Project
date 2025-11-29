@@ -23,5 +23,15 @@ NOTE: Only includes the Pokémon from the first 7 Generations (Not including meg
    a. Created a Dashboard that shows all the average stats for each type  
 		- Dragon type has the highest stats based on total stats, but Dragon is also always in the top 3 in every other individual stat  
 		- Bug is the lowest total stat and seems to be at the bottom of most graphs
+  
+   ![](images/type_stat_distribution.png)  
 
-   ![](images/type_stat_distribution.png)
+   b. Created a Dashboard that shows information about pokemon across the 7 generation  
+      - Number of each type in corresponding generation  
+      - Frequency of type combinations  
+      - Number of pokemon in each generation  
+        
+   ![](images/generation.png)  
+
+  
+4. TODO - Answer different questions that the dashboard and charts answer
