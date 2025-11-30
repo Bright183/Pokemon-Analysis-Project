@@ -1,4 +1,4 @@
-**Pokémon Data Analysis Project**
+**Pokémon Data Analysis Project**  
 
 Tableau Public Link: https://public.tableau.com/views/pokemon_visualization/StatsbyPrimaryType?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
@@ -6,7 +6,7 @@ Tableau Public Link: https://public.tableau.com/views/pokemon_visualization/Stat
 NOTE: Only includes the Pokémon from the first 7 Generations (Not including megas and different forms)   
       Ultra Beasts and Mythical Pokemon will be counted as legendaries as well
 
-**Project Process**
+**Project Process**  
 
 1. Clean the Data in Excel to get rid of non-needed data  
 	a. Got rid of Japanese Names  
@@ -34,10 +34,13 @@ NOTE: Only includes the Pokémon from the first 7 Generations (Not including meg
         
    ![](images/generation.png)  
 
+   c. Created a Dashboard that shows information about pokemon in different categories (Legendary, Mythic, Ultra Beast)  
+
   
 4. TODO - Answer different questions that the dashboard and charts answer  
 
 
 
-**Credits**
+**Credits**  
+
 Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon  
