@@ -268,13 +268,111 @@ ALTER TABLE pokemon_cleaned
 CHANGE speed speed INT AFTER sp_defense;
 
 
+-- Missing some pokemon from generation 7 (Adding it into the data) -> Will only be the data that I need
+-- Adding Marshadow, Poipole, Naganadel, Stakataka, Blacephalon, Zeroara, Meltan, Melmetal
+INSERT INTO pokemon_cleaned
+VALUES 
+(802, 'Marshadow', 'fighting', 'ghost', 7, NULL, 3, 1, 0.7, 22.2, 600, 90, 125, 90, 80, 90, 125, "['Technician', 'Shadow Hunt']", 0.25, 1.0, 1.0, 1.0, 2.0, 0.0, 1.0, 2.0, 2.0, 1.0, 1.0, 1.0, 0.0, 0.50, 2.0, 0.50, 1.0, 1.0),
+(803, 'Poipole', 'poison', NULL, 7, NULL, 45, 0, 0.6, 1.8, 420, 67, 73, 73, 67, 67, 73, "['Beast Boost']", 0.50, 1.0, 1.0, 1.0, 0.50, 0.50, 1.0, 1.0, 1.0, 0.50, 2.0, 1.0, 1.0, 0.50, 2.0, 1.0, 1.0, 1.0),
+(804, 'Naganadel', 'poison', 'dragon', 7, NULL, 45, 0, 3.6, 150.0, 540, 73, 73, 127, 73, 73, 121, "['Beast Boost']", 0.50, 1.0, 2.0, 0.50, 1.0, 0.50, 0.50, 1.0, 1.0, 0.25, 2.0, 2.0, 1.0, 0.50, 2.0, 1.0, 1.0, 0.50),
+(805, 'Stakataka', 'rock', 'steel', 7, NULL, 30, 0, 5.5, 820.0, 570, 61, 131, 53, 211, 101, 13, "['Beast Boost']", 0.50, 1.0, 0.50, 1.0, 0.50, 4.0, 1.0, 0.25, 1.0, 1.0, 4.0, 0.50, 0.25, 0.0, 0.50, 0.50, 1.0, 2.0),
+(806, 'Blacephalon', 'fire', 'ghost', 7, NULL, 30, 0, 1.8, 13.0, 570, 53, 127, 151, 53, 79, 107, "['Beast Boost']", 0.25, 2.0, 1.0, 1.0, 0.50, 0.0, 0.50, 1.0, 2.0, 0.50, 2.0, 0.50, 0.0, 0.50, 1.0, 2.0, 0.50, 2.0),
+(807, 'Zeraora', 'electric', NULL, 7, NULL, 3, 0, 1.5, 44.5, 600, 88, 112, 102, 75, 80, 143, "['Volt Absorb']", 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.50, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.50, 1.0),
+(808, 'Meltan', 'steel', NULL, 7, NULL, 3, 0, 0.2, 8.0, 300, 46, 65, 55, 65, 35, 34, "['Magnet Pull']", 0.50, 1.0, 0.50, 1.0, 0.50, 2.0, 2.0, 0.50, 1.0, 0.50, 2.0, 0.50, 0.50, 0.0, 0.50, 0.50, 0.50, 1.0),
+(809, 'Melmetal', 'steel', NULL, 7, NULL, 3, 0, 2.5, 800.0, 600, 135, 143, 80, 143, 65, 34, "['Iron Fist']", 0.50, 1.0, 0.50, 1.0, 0.50, 2.0, 2.0, 0.50, 1.0, 0.50, 2.0, 0.50, 0.50, 0.0, 0.50, 0.50, 0.50, 1.0);
 
 
 
 
+-- Cleaning the data so that there are columns for Mythic pokemon and Ultra Beasts instead of having them all as legendary
+
+-- Mythics and Ultra Beasts will not be considered legendary pokemon 
+UPDATE pokemon_cleaned
+SET is_legendary = 0
+WHERE 
+	pokedex_number = 151 OR
+    pokedex_number = 251 OR
+    pokedex_number = 385 OR
+    pokedex_number = 386 OR
+    pokedex_number = 489 OR
+    pokedex_number = 490 OR
+    pokedex_number = 491 OR
+    pokedex_number = 492 OR
+    pokedex_number = 493 OR
+    pokedex_number = 494 OR
+    pokedex_number = 647 OR
+    pokedex_number = 648 OR
+    pokedex_number = 649 OR
+    pokedex_number = 719 OR
+    pokedex_number = 720 OR
+    pokedex_number = 721 OR
+	pokedex_number = 793 OR
+    pokedex_number = 794 OR
+    pokedex_number = 795 OR
+    pokedex_number = 796 OR
+    pokedex_number = 797 OR
+    pokedex_number = 798 OR
+    pokedex_number = 799 OR
+    pokedex_number = 801 OR
+	pokedex_number = 802 OR
+    pokedex_number = 807 OR
+	pokedex_number = 808 OR
+	pokedex_number = 809
+;
 
 
+-- Add a Mythics column 
+ALTER TABLE pokemon_cleaned
+ADD COLUMN is_mythic INT DEFAULT 0 AFTER is_legendary; 
 
+-- Set Mythic pokemon to true
+UPDATE pokemon_cleaned
+SET is_mythic = 1
+WHERE 
+	pokedex_number = 151 OR
+    pokedex_number = 251 OR
+    pokedex_number = 385 OR
+    pokedex_number = 386 OR
+    pokedex_number = 489 OR
+    pokedex_number = 490 OR
+    pokedex_number = 491 OR
+    pokedex_number = 492 OR
+    pokedex_number = 493 OR
+    pokedex_number = 494 OR
+    pokedex_number = 647 OR
+    pokedex_number = 648 OR
+    pokedex_number = 649 OR
+    pokedex_number = 719 OR
+    pokedex_number = 720 OR
+    pokedex_number = 721 OR
+	pokedex_number = 801 OR
+	pokedex_number = 802 OR
+    pokedex_number = 807 OR
+	pokedex_number = 808 OR
+	pokedex_number = 809
+;
+
+
+-- Add a Ultra Beast Column
+ALTER TABLE pokemon_cleaned
+ADD COLUMN is_ultra_beast INT DEFAULT 0 AFTER is_mythic; 
+
+-- Set Ultra Beast pokemon to true
+UPDATE pokemon_cleaned
+SET is_ultra_beast = 1
+WHERE 
+pokedex_number = 793 OR
+    pokedex_number = 794 OR
+    pokedex_number = 795 OR
+    pokedex_number = 796 OR
+    pokedex_number = 797 OR
+    pokedex_number = 798 OR
+    pokedex_number = 799 OR
+    pokedex_number = 803 OR
+    pokedex_number = 804 OR
+    pokedex_number = 805 OR
+    pokedex_number = 806
+;
 
 
 

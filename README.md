@@ -2,9 +2,9 @@
 
 Tableau Public Link: https://public.tableau.com/views/pokemon_visualization/StatsbyPrimaryType?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon  
 
-NOTE: Only includes the Pokémon from the first 7 Generations (Not including megas, ultra beasts, and different forms) 
+NOTE: Only includes the Pokémon from the first 7 Generations (Not including megas and different forms)   
+      Ultra Beasts and Mythical Pokemon will be counted as legendaries as well
 
 **Project Process**
 
@@ -18,10 +18,11 @@ NOTE: Only includes the Pokémon from the first 7 Generations (Not including meg
    c. Null Values or Blank values  
    d. Removed Any Columns  
    e. Reordered Columns (Better readability)  
+   f. Added mythics and ultra beast columns + made sure their classifications are right
 
-3. Data Exploratory Analysis and Visualization in Tableau
+3. Data Exploratory Analysis and Visualization in Tableau  
    a. Created a Dashboard that shows all the average stats for each type  
-	   - Dragon type has the highest stats based on total stats, but Dragon is also always in the top 3 in every other individual stat  
+      - Dragon type has the highest stats based on total stats, but Dragon is also always in the top 3 in every other individual stat  
       - Bug is the lowest total stat and seems to be at the bottom of most graphs
   
    ![](images/type_stat_distribution.png)  
@@ -34,4 +35,9 @@ NOTE: Only includes the Pokémon from the first 7 Generations (Not including meg
    ![](images/generation.png)  
 
   
-4. TODO - Answer different questions that the dashboard and charts answer
+4. TODO - Answer different questions that the dashboard and charts answer  
+
+
+
+**Credits**
+Data gotten from https://www.kaggle.com/datasets/rounakbanik/pokemon  
